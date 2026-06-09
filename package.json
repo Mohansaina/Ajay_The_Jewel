@@ -2,12 +2,11 @@
   "name": "ajay-the-jeweller",
   "version": "1.0.0",
   "description": "Australia's No.1 Custom Jeweller web application and database backend",
-  "main": "server.js",
+  "main": "api/index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node api/index.js"
   },
   "dependencies": {
-    "express": "^4.19.2",
-    "sqlite3": "^5.1.7"
+    "express": "^4.19.2"
   }
 }

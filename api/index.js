@@ -1,5 +1,4 @@
 const express = require('express');
-const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 const fs = require('fs');
 
@@ -33,51 +32,28 @@ app.use((req, res, next) => {
     next();
 });
 
-// Initialize SQLite database (use /tmp on Vercel for writable ephemeral storage)
+// Initialize JSON-based database (use /tmp on Vercel for writable ephemeral storage)
 const isVercel = process.env.VERCEL === '1' || process.env.NOW_BUILDER === '1';
-const dbPath = isVercel ? path.join('/tmp', 'ajay_jeweller.db') : path.join(__dirname, '..', 'ajay_jeweller.db');
-const db = new sqlite3.Database(dbPath, (err) => {
-    if (err) {
-        console.error('Error opening database:', err);
-    } else {
-        console.log('Database connected successfully.');
-        initializeTables();
+const dbPath = isVercel ? path.join('/tmp', 'ajay_jeweller.json') : path.join(__dirname, '..', 'ajay_jeweller.json');
+
+function loadDb() {
+    try {
+        if (fs.existsSync(dbPath)) {
+            const data = fs.readFileSync(dbPath, 'utf8');
+            return JSON.parse(data);
+        }
+    } catch (err) {
+        console.error('Error reading database file:', err);
     }
-});
+    return { orders: [], bookings: [] };
+}
 
-function initializeTables() {
-    // Orders table
-    db.run(`CREATE TABLE IF NOT EXISTS orders (
-        id TEXT PRIMARY KEY,
-        client_name TEXT NOT NULL,
-        client_email TEXT NOT NULL,
-        address TEXT NOT NULL,
-        city TEXT NOT NULL,
-        postcode TEXT NOT NULL,
-        phone TEXT NOT NULL,
-        items TEXT NOT NULL, -- JSON string of cart items
-        shipping_method TEXT NOT NULL,
-        shipping_fee REAL NOT NULL,
-        total REAL NOT NULL,
-        status INTEGER NOT NULL DEFAULT 1, -- 1: CAD, 2: Casting, 3: Gem Setting, 4: Audit, 5: Transit
-        created_at INTEGER NOT NULL
-    )`, (err) => {
-        if (err) console.error('Error creating orders table:', err);
-    });
-
-    // Bookings table
-    db.run(`CREATE TABLE IF NOT EXISTS bookings (
-        id TEXT PRIMARY KEY,
-        type TEXT NOT NULL,
-        date TEXT NOT NULL, -- YYYY-MM-DD
-        time TEXT NOT NULL, -- HH:MM
-        client_name TEXT NOT NULL,
-        client_email TEXT NOT NULL,
-        message TEXT,
-        created_at INTEGER NOT NULL
-    )`, (err) => {
-        if (err) console.error('Error creating bookings table:', err);
-    });
+function saveDb(data) {
+    try {
+        fs.writeFileSync(dbPath, JSON.stringify(data, null, 2), 'utf8');
+    } catch (err) {
+        console.error('Error writing database file:', err);
+    }
 }
 
 // Serve static frontend files
@@ -110,29 +86,25 @@ app.post('/api/orders', (req, res) => {
         const createdAt = Date.now();
         const itemsJson = JSON.stringify(items);
 
-        const query = `INSERT INTO orders (id, client_name, client_email, address, city, postcode, phone, items, shipping_method, shipping_fee, total, status, created_at)
-                       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)`;
-
-        db.run(query, [
-            orderId,
-            client_name.trim(),
-            client_email.trim(),
-            address.trim(),
-            city.trim(),
-            postcode.trim(),
-            phone.trim(),
-            itemsJson,
+        const dbData = loadDb();
+        dbData.orders.push({
+            id: orderId,
+            client_name: client_name.trim(),
+            client_email: client_email.trim(),
+            address: address.trim(),
+            city: city.trim(),
+            postcode: postcode.trim(),
+            phone: phone.trim(),
+            items: itemsJson,
             shipping_method,
-            parseFloat(shipping_fee) || 0,
-            parseFloat(total) || 0,
-            createdAt
-        ], function(err) {
-            if (err) {
-                console.error('Database insertion error:', err);
-                return res.status(500).json({ error: 'Database error occurred. Please try again.' });
-            }
-            res.status(201).json({ success: true, orderId, total, status: 1 });
+            shipping_fee: parseFloat(shipping_fee) || 0,
+            total: parseFloat(total) || 0,
+            status: 1, // 1: CAD, 2: Casting, 3: Gem Setting, 4: Audit, 5: Transit
+            created_at: createdAt
         });
+        saveDb(dbData);
+
+        res.status(201).json({ success: true, orderId, total, status: 1 });
     } catch (e) {
         console.error('Order route exception:', e);
         res.status(500).json({ error: 'Internal server error.' });
@@ -142,37 +114,34 @@ app.post('/api/orders', (req, res) => {
 // 2. Get order status by ID
 app.get('/api/orders/:id', (req, res) => {
     const orderId = req.params.id;
-    const query = `SELECT id, status, total, created_at, client_name FROM orders WHERE id = ?`;
-
-    db.get(query, [orderId], (err, row) => {
-        if (err) {
-            console.error('Database query error:', err);
-            return res.status(500).json({ error: 'Database error occurred.' });
-        }
-        if (!row) {
-            return res.status(404).json({ error: 'Order not found.' });
-        }
-        res.json(row);
+    const dbData = loadDb();
+    const row = dbData.orders.find(o => o.id === orderId);
+    
+    if (!row) {
+        return res.status(404).json({ error: 'Order not found.' });
+    }
+    
+    res.json({
+        id: row.id,
+        status: row.status,
+        total: row.total,
+        created_at: row.created_at,
+        client_name: row.client_name
     });
 });
 
 // 3. Simulate order progress (for tracker demo)
 app.post('/api/orders/:id/simulate-progress', (req, res) => {
     const orderId = req.params.id;
-    const selectQuery = `SELECT status FROM orders WHERE id = ?`;
+    const dbData = loadDb();
+    const order = dbData.orders.find(o => o.id === orderId);
+    
+    if (!order) return res.status(404).json({ error: 'Order not found.' });
 
-    db.get(selectQuery, [orderId], (err, row) => {
-        if (err) return res.status(500).json({ error: 'Database error occurred.' });
-        if (!row) return res.status(404).json({ error: 'Order not found.' });
-
-        let nextStatus = row.status < 5 ? row.status + 1 : 5;
-        const updateQuery = `UPDATE orders SET status = ? WHERE id = ?`;
-
-        db.run(updateQuery, [nextStatus, orderId], (updateErr) => {
-            if (updateErr) return res.status(500).json({ error: 'Failed to update order status.' });
-            res.json({ success: true, orderId, status: nextStatus });
-        });
-    });
+    order.status = order.status < 5 ? order.status + 1 : 5;
+    saveDb(dbData);
+    
+    res.json({ success: true, orderId, status: order.status });
 });
 
 // 4. Create a new consultation booking
@@ -188,39 +157,29 @@ app.post('/api/bookings', (req, res) => {
             return res.status(400).json({ error: 'Invalid email address.' });
         }
 
-        // Check if slot is already taken (double booking prevention)
-        const checkQuery = `SELECT id FROM bookings WHERE date = ? AND time = ? AND type = ?`;
-        db.get(checkQuery, [date, time, type], (checkErr, row) => {
-            if (checkErr) {
-                return res.status(500).json({ error: 'Database error while checking slot availability.' });
-            }
-            if (row) {
-                return res.status(409).json({ error: 'This time slot is already reserved. Please select another slot.' });
-            }
+        const dbData = loadDb();
+        const slotTaken = dbData.bookings.some(b => b.date === date && b.time === time && b.type === type);
+        
+        if (slotTaken) {
+            return res.status(409).json({ error: 'This time slot is already reserved. Please select another slot.' });
+        }
 
-            const bookingId = 'BK-' + Math.floor(10000 + Math.random() * 90000);
-            const createdAt = Date.now();
+        const bookingId = 'BK-' + Math.floor(10000 + Math.random() * 90000);
+        const createdAt = Date.now();
 
-            const insertQuery = `INSERT INTO bookings (id, type, date, time, client_name, client_email, message, created_at)
-                                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
-
-            db.run(insertQuery, [
-                bookingId,
-                type,
-                date,
-                time,
-                client_name.trim(),
-                client_email.trim(),
-                message ? message.trim() : '',
-                createdAt
-            ], (insertErr) => {
-                if (insertErr) {
-                    console.error('Booking insertion error:', insertErr);
-                    return res.status(500).json({ error: 'Database error while saving booking.' });
-                }
-                res.status(201).json({ success: true, bookingId, type, date, time });
-            });
+        dbData.bookings.push({
+            id: bookingId,
+            type,
+            date,
+            time,
+            client_name: client_name.trim(),
+            client_email: client_email.trim(),
+            message: message ? message.trim() : '',
+            created_at: createdAt
         });
+        saveDb(dbData);
+
+        res.status(201).json({ success: true, bookingId, type, date, time });
     } catch (e) {
         console.error('Booking exception:', e);
         res.status(500).json({ error: 'Internal server error.' });
@@ -234,56 +193,56 @@ app.get('/api/bookings/export-ics', (req, res) => {
         return res.status(400).send('Booking ID is required.');
     }
 
-    const query = `SELECT * FROM bookings WHERE id = ?`;
-    db.get(query, [bookingId], (err, row) => {
-        if (err || !row) {
-            return res.status(404).send('Booking not found.');
-        }
+    const dbData = loadDb();
+    const row = dbData.bookings.find(b => b.id === bookingId);
+    
+    if (!row) {
+        return res.status(404).send('Booking not found.');
+    }
 
-        // Create start date in UTC or parse safely
-        // date format: "YYYY-MM-DD", time format: "HH:MM" (24-hour style, e.g. "11:00" or "15:30")
-        const dateParts = row.date.split('-'); // [YYYY, MM, DD]
-        const timeParts = row.time.split(':'); // [HH, MM]
-        
-        const year = dateParts[0];
-        const month = dateParts[1];
-        const day = dateParts[2];
-        const hour = timeParts[0];
-        const minute = timeParts[1];
+    // Create start date in UTC or parse safely
+    // date format: "YYYY-MM-DD", time format: "HH:MM" (24-hour style, e.g. "11:00" or "15:30")
+    const dateParts = row.date.split('-'); // [YYYY, MM, DD]
+    const timeParts = row.time.split(':'); // [HH, MM]
+    
+    const year = dateParts[0];
+    const month = dateParts[1];
+    const day = dateParts[2];
+    const hour = timeParts[0];
+    const minute = timeParts[1];
 
-        // DTSTART: YYYYMMDDTHHMMSSZ (AEST is GMT+10, let's represent standard string)
-        const formatStr = `${year}${month}${day}T${hour}${minute}00`;
-        
-        // Duration: 1 hour
-        const endHour = String(parseInt(hour, 10) + 1).padStart(2, '0');
-        const endFormatStr = `${year}${month}${day}T${endHour}${minute}00`;
+    // DTSTART: YYYYMMDDTHHMMSSZ (AEST is GMT+10, let's represent standard string)
+    const formatStr = `${year}${month}${day}T${hour}${minute}00`;
+    
+    // Duration: 1 hour
+    const endHour = String(parseInt(hour, 10) + 1).padStart(2, '0');
+    const endFormatStr = `${year}${month}${day}T${endHour}${minute}00`;
 
-        const nowFormatted = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+    const nowFormatted = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
 
-        const icsContent = [
-            'BEGIN:VCALENDAR',
-            'VERSION:2.0',
-            'PRODID:-//Ajay The Jeweller//VIP Consultation//EN',
-            'CALSCALE:GREGORIAN',
-            'METHOD:PUBLISH',
-            'BEGIN:VEVENT',
-            `UID:${row.id}@ajaythejeweller.com`,
-            `DTSTAMP:${nowFormatted}`,
-            `DTSTART;TZID=Australia/Sydney:${formatStr}`,
-            `DTEND;TZID=Australia/Sydney:${endFormatStr}`,
-            `SUMMARY:${row.type} - Ajay The Jeweller`,
-            `DESCRIPTION:VIP Consultation Session\\nClient: ${row.client_name}\\nEmail: ${row.client_email}\\nNotes: ${row.message || 'None'}`,
-            `LOCATION:Atelier Sydney / Secure Video Room`,
-            'STATUS:CONFIRMED',
-            'SEQUENCE:0',
-            'END:VEVENT',
-            'END:VCALENDAR'
-        ].join('\r\n');
+    const icsContent = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Ajay The Jeweller//VIP Consultation//EN',
+        'CALSCALE:GREGORIAN',
+        'METHOD:PUBLISH',
+        'BEGIN:VEVENT',
+        `UID:${row.id}@ajaythejeweller.com`,
+        `DTSTAMP:${nowFormatted}`,
+        `DTSTART;TZID=Australia/Sydney:${formatStr}`,
+        `DTEND;TZID=Australia/Sydney:${endFormatStr}`,
+        `SUMMARY:${row.type} - Ajay The Jeweller`,
+        `DESCRIPTION:VIP Consultation Session\\nClient: ${row.client_name}\\nEmail: ${row.client_email}\\nNotes: ${row.message || 'None'}`,
+        `LOCATION:Atelier Sydney / Secure Video Room`,
+        'STATUS:CONFIRMED',
+        'SEQUENCE:0',
+        'END:VEVENT',
+        'END:VCALENDAR'
+    ].join('\r\n');
 
-        res.setHeader('Content-Type', 'text/calendar; charset=utf-8');
-        res.setHeader('Content-Disposition', `attachment; filename=ajay-booking-${row.id}.ics`);
-        res.send(icsContent);
-    });
+    res.setHeader('Content-Type', 'text/calendar; charset=utf-8');
+    res.setHeader('Content-Disposition', `attachment; filename=ajay-booking-${row.id}.ics`);
+    res.send(icsContent);
 });
 
 // 6. Streaming AI chatbot assistant
@@ -308,32 +267,29 @@ app.post('/api/chat', (req, res) => {
         const orderMatch = sanitizedQuery.match(/AJ-(\d{5})/i);
         if (orderMatch) {
             const orderId = orderMatch[0].toUpperCase();
-            db.get("SELECT id, client_name, status, total, created_at FROM orders WHERE id = ?", [orderId], (err, row) => {
-                if (err) {
-                    console.error("Chat Order DB Error:", err);
-                    streamText("I encountered an internal error looking up your order. Please try again later.", res, req);
-                    return;
-                }
-                if (!row) {
-                    streamText(`I looked up the order ID **${orderId}** in our secure vault ledger, but no matching records were found. Please verify the ID and try again.`, res, req);
-                    return;
-                }
-                const stages = [
-                    "CAD Design & 3D Modeling (Stage 1/5)",
-                    "Casting & Metal Refinement (Stage 2/5)",
-                    "Hand Setting Diamonds & Gemstones (Stage 3/5)",
-                    "Acoustic Quality Audit & Review (Stage 4/5)",
-                    "Dispatched via Insured Courier (Stage 5/5)"
-                ];
-                const stageName = stages[row.status - 1] || "Processing";
-                const orderDate = new Date(row.created_at).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
-                const text = `Hello **${row.client_name}**, I have retrieved your order **${row.id}** from our system:\n\n` +
-                             `* **Fabrication Stage**: ${stageName}\n` +
-                             `* **Total Value**: $${row.total.toLocaleString()} AUD\n` +
-                             `* **Order Date**: ${orderDate}\n\n` +
-                             `Our Sydney workshop is crafting your bespoke heirloom. Let me know if you want to know what happens in this stage!`;
-                streamText(text, res, req);
-            });
+            const dbData = loadDb();
+            const row = dbData.orders.find(o => o.id === orderId);
+            
+            if (!row) {
+                streamText(`I looked up the order ID **${orderId}** in our secure vault ledger, but no matching records were found. Please verify the ID and try again.`, res, req);
+                return;
+            }
+            
+            const stages = [
+                "CAD Design & 3D Modeling (Stage 1/5)",
+                "Casting & Metal Refinement (Stage 2/5)",
+                "Hand Setting Diamonds & Gemstones (Stage 3/5)",
+                "Acoustic Quality Audit & Review (Stage 4/5)",
+                "Dispatched via Insured Courier (Stage 5/5)"
+            ];
+            const stageName = stages[row.status - 1] || "Processing";
+            const orderDate = new Date(row.created_at).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
+            const text = `Hello **${row.client_name}**, I have retrieved your order **${row.id}** from our system:\n\n` +
+                         `* **Fabrication Stage**: ${stageName}\n` +
+                         `* **Total Value**: $${row.total.toLocaleString()} AUD\n` +
+                         `* **Order Date**: ${orderDate}\n\n` +
+                         `Our Sydney workshop is crafting your bespoke heirloom. Let me know if you want to know what happens in this stage!`;
+            streamText(text, res, req);
             return;
         }
         
@@ -341,23 +297,20 @@ app.post('/api/chat', (req, res) => {
         const bookingMatch = sanitizedQuery.match(/BK-(\d{5})/i);
         if (bookingMatch) {
             const bookingId = bookingMatch[0].toUpperCase();
-            db.get("SELECT id, type, date, time, client_name FROM bookings WHERE id = ?", [bookingId], (err, row) => {
-                if (err) {
-                    console.error("Chat Booking DB Error:", err);
-                    streamText("I encountered an internal error looking up your appointment. Please try again.", res, req);
-                    return;
-                }
-                if (!row) {
-                    streamText(`I searched for the consultation booking **${bookingId}**, but did not find any matching record. Please verify your appointment details.`, res, req);
-                    return;
-                }
-                const text = `Hello **${row.client_name}**, I have verified your VIP appointment **${row.id}**:\n\n` +
-                             `* **Type**: ${row.type}\n` +
-                             `* **Date**: ${row.date}\n` +
-                             `* **Time**: ${row.time} AEST\n\n` +
-                             `Your session is confirmed. We look forward to welcome you to our Sydney workshop or secure video conference!`;
-                streamText(text, res, req);
-            });
+            const dbData = loadDb();
+            const row = dbData.bookings.find(b => b.id === bookingId);
+            
+            if (!row) {
+                streamText(`I searched for the consultation booking **${bookingId}**, but did not find any matching record. Please verify your appointment details.`, res, req);
+                return;
+            }
+            
+            const text = `Hello **${row.client_name}**, I have verified your VIP appointment **${row.id}**:\n\n` +
+                         `* **Type**: ${row.type}\n` +
+                         `* **Date**: ${row.date}\n` +
+                         `* **Time**: ${row.time} AEST\n\n` +
+                         `Your session is confirmed. We look forward to welcome you to our Sydney workshop or secure video conference!`;
+            streamText(text, res, req);
             return;
         }
         
