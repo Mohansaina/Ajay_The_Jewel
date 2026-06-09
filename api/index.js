@@ -35,7 +35,7 @@ app.use((req, res, next) => {
 
 // Initialize SQLite database (use /tmp on Vercel for writable ephemeral storage)
 const isVercel = process.env.VERCEL === '1' || process.env.NOW_BUILDER === '1';
-const dbPath = isVercel ? path.join('/tmp', 'ajay_jeweller.db') : path.join(__dirname, 'ajay_jeweller.db');
+const dbPath = isVercel ? path.join('/tmp', 'ajay_jeweller.db') : path.join(__dirname, '..', 'ajay_jeweller.db');
 const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
         console.error('Error opening database:', err);
@@ -81,11 +81,11 @@ function initializeTables() {
 }
 
 // Serve static frontend files
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, '..')));
 
 // Serve index.html at the root route
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
 // --- API Endpoints ---
