@@ -1,0 +1,3097 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Design your dream luxury jewellery piece with Ajay The Jeweller, Australia's No.1 Custom Jeweller based in Sydney. Bespoke diamond chains, rings, pendants, and engagement rings with worldwide shipping." name="description"/>
+<title>AJAY THE JEWELLER | Australia's No.1 Custom Jeweller</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Hanken+Grotesk:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #0e0e0e;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .gold-glow:hover {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+        }
+        .glass-nav {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        ::selection {
+            background: #d4af37;
+            color: #0e0e0e;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0e0e0e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4af37;
+        }
+
+        /* Metallic Shimmer Effect */
+        .shimmer-gold {
+            background: linear-gradient(
+                to right,
+                #f2ca50 20%,
+                #ffe088 40%,
+                #f2ca50 60%,
+                #d4af37 80%,
+                #f2ca50 100%
+            );
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shimmer 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes shimmer {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* Ken Burns Effect */
+        .ken-burns {
+            animation: kenburns 20s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+        }
+
+        @keyframes kenburns {
+            0% {
+                transform: scale(1) translate(0, 0);
+            }
+            100% {
+                transform: scale(1.15) translate(-1%, -1%);
+            }
+        }
+
+        /* Pulse Animation for VIP Button */
+        .pulse-gold {
+            animation: pulse-gold 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
+        }
+
+        @keyframes pulse-gold {
+            0% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+            }
+        }
+
+        /* Scroll Reveal Utility Classes */
+        .reveal-hidden {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Smooth Transitions */
+        .transition-luxury {
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* Expandable collection container */
+        .expandable-grid {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 1.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease;
+        }
+        .expandable-grid.expanded {
+            max-height: 3500px; /* Large enough for single-column mobile view stack */
+            opacity: 1;
+            margin-top: 32px;
+        }
+        @keyframes waterWave {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+<script id="tailwind-config">
+        window.tailwind = {
+            config: {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "error-container": "#93000a",
+                            "tertiary-container": "#b2b3b3",
+                            "primary": "#f2ca50",
+                            "on-secondary-container": "#b7b4b4",
+                            "on-secondary-fixed-variant": "#474646",
+                            "surface": "#131313",
+                            "inverse-primary": "#735c00",
+                            "on-tertiary-fixed-variant": "#454747",
+                            "on-tertiary": "#2f3131",
+                            "surface-container": "#20201f",
+                            "on-surface": "#e5e2e1",
+                            "error": "#ffb4ab",
+                            "on-tertiary-container": "#434546",
+                            "surface-variant": "#353535",
+                            "background": "#131313",
+                            "on-primary": "#3c2f00",
+                            "surface-container-lowest": "#0e0e0e",
+                            "on-primary-container": "#554300",
+                            "outline": "#99907c",
+                            "primary-fixed-dim": "#e9c349",
+                            "primary-container": "#d4af37",
+                            "on-primary-fixed-variant": "#574500",
+                            "secondary-fixed": "#e5e2e1",
+                            "surface-tint": "#e9c349",
+                            "on-secondary": "#313030",
+                            "surface-container-low": "#1c1b1b",
+                            "surface-bright": "#393939",
+                            "inverse-on-surface": "#313030",
+                            "secondary": "#c9c6c5",
+                            "surface-container-high": "#2a2a2a",
+                            "on-surface-variant": "#d0c5af",
+                            "on-background": "#e5e2e1",
+                            "secondary-fixed-dim": "#c9c6c5",
+                            "tertiary-fixed": "#e2e2e2",
+                            "surface-container-highest": "#353535",
+                            "tertiary": "#cecece",
+                            "on-error": "#690005",
+                            "tertiary-fixed-dim": "#c6c6c7",
+                            "on-tertiary-fixed": "#1a1c1c",
+                            "primary-fixed": "#ffe088",
+                            "on-primary-fixed": "#241a00",
+                            "secondary-container": "#474646",
+                            "inverse-surface": "#e5e2e1",
+                            "outline-variant": "#4d4635",
+                            "surface-dim": "#131313",
+                            "on-secondary-fixed": "#1c1b1b",
+                            "on-error-container": "#ffdad6"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                        },
+                        "spacing": {
+                            "margin-mobile": "24px",
+                            "margin-desktop": "80px",
+                            "container-max": "1440px",
+                            "gutter": "32px",
+                            "unit": "8px"
+                        },
+                        "fontFamily": {
+                            "title-md": ["Hanken Grotesk"],
+                            "headline-lg-mobile": ["Bodoni Moda"],
+                            "body-lg": ["Hanken Grotesk"],
+                            "display-lg": ["Bodoni Moda"],
+                            "label-sm": ["Hanken Grotesk"],
+                            "headline-lg": ["Bodoni Moda"]
+                        },
+                        "fontSize": {
+                            "title-md": ["20px", {"lineHeight": "28px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                            "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                            "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "300"}],
+                            "display-lg": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "600"}],
+                            "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-surface-container-lowest font-body-lg text-on-surface selection:bg-primary selection:text-surface-container-lowest">
+<!-- Top Contact Bar -->
+<div class="bg-primary text-surface-container-lowest text-[10px] font-label-sm py-2 px-margin-mobile md:px-margin-desktop text-center tracking-[0.2em] font-semibold uppercase flex justify-between items-center z-50 fixed top-0 w-full h-[36px] shadow-sm">
+    <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]" data-icon="location_on" style="font-variation-settings: 'wght' 600;">location_on</span> Sydney, Australia</span>
+    <span class="hidden md:inline">✦ COMPLIMENTARY SECURE WORLDWIDE COURIER ✦</span>
+    <a href="tel:+61438857300" class="flex items-center gap-1 hover:opacity-85"><span class="material-symbols-outlined text-[12px]" data-icon="call" style="font-variation-settings: 'wght' 600;">call</span> +61 438 857 300</a>
+</div>
+
+<!-- Header / TopAppBar -->
+<header class="bg-surface/40 backdrop-blur-md text-primary fixed top-[36px] w-full z-50 border-b border-primary/10 shadow-none transition-luxury">
+<nav class="flex justify-between items-center px-margin-desktop py-6 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-luxury" data-icon="menu">menu</span>
+</div>
+<h1 class="font-display-lg text-title-md tracking-[0.2em] text-primary uppercase">AJAY THE JEWELLER</h1>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-label-sm text-on-surface hover:text-primary transition-luxury" href="#collection">COLLECTION</a>
+<a class="font-label-sm text-on-surface hover:text-primary transition-luxury" href="#process">PROCESS</a>
+<a class="font-label-sm text-on-surface hover:text-primary transition-luxury" href="#customizer">CUSTOMIZER</a>
+<a class="font-label-sm text-on-surface hover:text-primary transition-luxury" href="#atelier">ABOUT</a>
+<a class="font-label-sm text-on-surface hover:text-primary transition-luxury" href="#testimonials">REVIEWS</a>
+<a class="font-label-sm text-on-surface hover:text-primary transition-luxury" href="#vip">CONSULTATION</a>
+</div>
+<div class="relative cursor-pointer hover:opacity-80 transition-luxury" id="cart-btn">
+<span class="material-symbols-outlined text-primary" data-icon="shopping_bag">shopping_bag</span>
+<span id="cart-count" class="absolute -top-2 -right-2 bg-primary text-surface-container-lowest text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+</div>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<div id="hero-scroll-container" class="relative w-full" style="height: 300vh;">
+<section class="sticky top-0 w-full flex items-center justify-center overflow-hidden z-0" style="height: 100vh;">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-black/60 z-10 pointer-events-none"></div>
+<canvas id="hero-canvas" class="w-full h-full object-cover block transition-transform duration-100 ease-out"></canvas>
+<img id="hero-fallback-image" alt="Hero Image" class="absolute inset-0 w-full h-full object-cover z-0 hidden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf03hf-Os8G2wuedHl1JDo5RGF-dusTUSK9IXqUWabAuR4dUhKt663XE6wKvJAq9twOoqD81nVH8egZtaAn9W4dUnfziauhN6aewi7jHuCwm12jZIcjSoTWO270NtoCrwS90ny8XZa6PpwMC3T8bbbsQgxC8Bc-_cSfMBWTcROZzkGE6dtuGYsoKz1IdkPatGozShCzubqTykwpMCm6VekT32TG_4ZS_RQ5RUeIxb4o5zLRrlQU4EkaypypeSVO8jUtzbFMtoEMOaT"/>
+</div>
+<!-- Glass overlay circle to cover image watermark with reflective water droplet wave animation -->
+<div class="absolute bottom-2 right-6 md:bottom-3 md:right-12 w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 shadow-[inset_0_4px_12px_rgba(255,255,255,0.15),0_12px_36px_rgba(0,0,0,0.5)] z-20 pointer-events-none flex items-center justify-center overflow-hidden">
+    <div class="absolute top-2 left-4 w-6 h-3 bg-white/20 rounded-full blur-[1px] transform -rotate-12 z-30"></div>
+    <!-- Interactive Liquid Water Animation -->
+    <div class="absolute inset-0 rounded-full overflow-hidden z-10">
+        <!-- Water base liquid body -->
+        <div class="absolute bottom-0 left-0 w-full h-[55%] bg-primary/25 z-10"></div>
+        <!-- Animated Wave Layer 1 (Dark mask matching body background to sculpt fluid wave ripples) -->
+        <div class="absolute left-[-50%] top-[30%] w-[200%] h-[200%] bg-[#0e0e0e] rounded-[38%] animate-[waterWave_6s_linear_infinite] z-20"></div>
+        <!-- Animated Wave Layer 2 (Gold accent highlights) -->
+        <div class="absolute left-[-52%] top-[27%] w-[200%] h-[200%] bg-primary/15 rounded-[35%] animate-[waterWave_9s_linear_infinite] z-15"></div>
+        <!-- Animated Wave Layer 3 (White shimmer highlights) -->
+        <div class="absolute left-[-48%] top-[25%] w-[200%] h-[200%] bg-white/5 rounded-[40%] animate-[waterWave_12s_linear_infinite] z-25"></div>
+    </div>
+</div>
+<!-- Falling Diamonds Overlay Canvas -->
+<canvas id="diamonds-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-10"></canvas>
+<div id="hero-text-container" class="relative z-20 text-center px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto transition-all duration-75 ease-out">
+<span class="font-label-sm text-primary tracking-[0.3em] mb-6 block opacity-0 animate-[fadeInUp_1.5s_cubic-bezier(0.22,1,0.36,1)_0.2s_forwards]">ESTABLISHED MMXXIV</span>
+<h2 class="shimmer-gold font-display-lg text-[64px] md:text-display-lg leading-tight mb-8 opacity-0 animate-[fadeInUp_1.5s_cubic-bezier(0.22,1,0.36,1)_0.5s_forwards]">CRAFTING LEGENDS</h2>
+<p class="font-body-lg text-secondary max-w-2xl mx-auto mb-12 opacity-0 animate-[fadeInUp_1.5s_cubic-bezier(0.22,1,0.36,1)_0.8s_forwards]">
+                    Witness the convergence of heritage craftsmanship and avant-garde design. From VVS+ diamond mastery to bespoke gold architecture, we define the standard of high-jewelry for the modern elite.
+                </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center opacity-0 animate-[fadeInUp_1.5s_cubic-bezier(0.22,1,0.36,1)_1.1s_forwards]">
+<button class="bg-primary-container text-on-primary font-label-sm py-5 px-12 uppercase tracking-[0.15em] gold-glow transition-luxury hover:scale-[1.05] active:scale-95">
+                        DISCOVER THE COLLECTION
+                    </button>
+<button class="border-b border-primary text-on-surface font-label-sm py-2 px-4 uppercase tracking-[0.15em] hover:text-primary transition-luxury">
+                        BOOK A CONSULTATION
+                    </button>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div id="hero-scroll-indicator" class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-50 animate-bounce transition-opacity duration-300">
+<span class="font-label-sm text-[10px] tracking-widest uppercase">SCROLL</span>
+<div class="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent"></div>
+</div>
+</section>
+</div>
+
+<!-- Philosophy / Pillars Section -->
+<section class="reveal-hidden py-24 bg-surface border-y border-primary/10 relative overflow-hidden">
+    <div class="absolute -left-10 top-1/2 w-1/4 h-[300px] bg-primary/5 blur-[100px] pointer-events-none"></div>
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center mb-16">
+        <span class="font-label-sm text-primary tracking-[0.3em] mb-4 block uppercase text-[11px]">THE STANDARDS OF LEGEND</span>
+        <h3 class="font-display-lg text-4xl md:text-5xl text-on-surface">Pillars of High-Jewelry</h3>
+    </div>
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-12">
+        <!-- Pillar 1 -->
+        <div class="p-10 bg-surface/30 backdrop-blur-sm border border-white/5 hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(212,175,55,0.12)] group relative">
+            <div class="absolute top-0 left-0 w-8 h-[1px] bg-primary/40 transition-all duration-500 group-hover:w-full"></div>
+            <div class="absolute top-0 left-0 h-8 w-[1px] bg-primary/40 transition-all duration-500 group-hover:h-full"></div>
+            <div class="absolute bottom-0 right-0 w-8 h-[1px] bg-primary/40 transition-all duration-500 group-hover:w-full"></div>
+            <div class="absolute bottom-0 right-0 h-8 w-[1px] bg-primary/40 transition-all duration-500 group-hover:h-full"></div>
+            <div class="relative w-max mb-8 select-none">
+                <div class="absolute inset-0 bg-primary/5 rounded-full scale-50 opacity-0 group-hover:scale-150 group-hover:opacity-100 transition-all duration-500 blur-[8px]"></div>
+                <div class="font-display-lg text-5xl text-primary/30 font-light italic transition-colors duration-500 group-hover:text-primary relative z-10">I</div>
+            </div>
+            <h4 class="font-title-md text-on-surface text-xl mb-4 uppercase tracking-[0.05em] group-hover:text-primary transition-colors duration-300">VVS+ Diamond Mastery</h4>
+            <p class="font-body-lg text-secondary text-sm leading-relaxed">
+                Only the top 1% of the world's rough diamonds are chosen. Meticulously inspected under high-powered magnification for ultimate brilliance and fire.
+            </p>
+        </div>
+        <!-- Pillar 2 -->
+        <div class="p-10 bg-surface/30 backdrop-blur-sm border border-white/5 hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(212,175,55,0.12)] group relative">
+            <div class="absolute top-0 left-0 w-8 h-[1px] bg-primary/40 transition-all duration-500 group-hover:w-full"></div>
+            <div class="absolute top-0 left-0 h-8 w-[1px] bg-primary/40 transition-all duration-500 group-hover:h-full"></div>
+            <div class="absolute bottom-0 right-0 w-8 h-[1px] bg-primary/40 transition-all duration-500 group-hover:w-full"></div>
+            <div class="absolute bottom-0 right-0 h-8 w-[1px] bg-primary/40 transition-all duration-500 group-hover:h-full"></div>
+            <div class="relative w-max mb-8 select-none">
+                <div class="absolute inset-0 bg-primary/5 rounded-full scale-50 opacity-0 group-hover:scale-150 group-hover:opacity-100 transition-all duration-500 blur-[8px]"></div>
+                <div class="font-display-lg text-5xl text-primary/30 font-light italic transition-colors duration-500 group-hover:text-primary relative z-10">II</div>
+            </div>
+            <h4 class="font-title-md text-on-surface text-xl mb-4 uppercase tracking-[0.05em] group-hover:text-primary transition-colors duration-300">Signature Metallurgy</h4>
+            <p class="font-body-lg text-secondary text-sm leading-relaxed">
+                Our proprietary 18k and 22k gold alloys are sculpted to achieve a unique warm glow, engineered specifically to highlight the skin tone of the wearer.
+            </p>
+        </div>
+        <!-- Pillar 3 -->
+        <div class="p-10 bg-surface/30 backdrop-blur-sm border border-white/5 hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(212,175,55,0.12)] group relative">
+            <div class="absolute top-0 left-0 w-8 h-[1px] bg-primary/40 transition-all duration-500 group-hover:w-full"></div>
+            <div class="absolute top-0 left-0 h-8 w-[1px] bg-primary/40 transition-all duration-500 group-hover:h-full"></div>
+            <div class="absolute bottom-0 right-0 w-8 h-[1px] bg-primary/40 transition-all duration-500 group-hover:w-full"></div>
+            <div class="absolute bottom-0 right-0 h-8 w-[1px] bg-primary/40 transition-all duration-500 group-hover:h-full"></div>
+            <div class="relative w-max mb-8 select-none">
+                <div class="absolute inset-0 bg-primary/5 rounded-full scale-50 opacity-0 group-hover:scale-150 group-hover:opacity-100 transition-all duration-500 blur-[8px]"></div>
+                <div class="font-display-lg text-5xl text-primary/30 font-light italic transition-colors duration-500 group-hover:text-primary relative z-10">III</div>
+            </div>
+            <h4 class="font-title-md text-on-surface text-xl mb-4 uppercase tracking-[0.05em] group-hover:text-primary transition-colors duration-300">Bespoke Architecture</h4>
+            <p class="font-body-lg text-secondary text-sm leading-relaxed">
+                Every piece begins with a raw sketch and a 3D architectural blueprint, ensuring that structural integrity matches high-fashion visual impact.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Curated Collection -->
+<section class="reveal-hidden py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="collection">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+<div class="max-w-xl">
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6 text-on-surface">Curated Collection</h3>
+<p class="font-body-lg text-secondary">Each piece is a singular expression of excellence, meticulously curated for those who command the extraordinary.</p>
+</div>
+</div>
+
+<!-- Search, Filter & Sort Hub -->
+<div class="mb-12 bg-surface-container-low/50 backdrop-blur-sm border border-white/5 p-6 rounded-lg flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between shadow-xl">
+    <!-- Search Bar -->
+    <div class="relative flex-grow max-w-md">
+        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 text-lg">search</span>
+        <input type="text" id="collection-search" placeholder="Search the collection..." class="w-full bg-surface-container-lowest border border-white/10 rounded-md pl-12 pr-4 py-3 text-sm focus:border-primary focus:ring-0 transition-luxury placeholder-secondary/50 text-on-surface">
+    </div>
+
+    <!-- Category Filter Pills (Scrollable on mobile) -->
+    <div class="flex gap-2 overflow-x-auto pb-2 lg:pb-0 no-scrollbar scroll-smooth flex-grow max-w-2xl px-2">
+        <button class="filter-pill active whitespace-nowrap px-4 py-2 border border-primary text-primary bg-primary/10 rounded-full font-label-sm text-[9px] uppercase tracking-widest hover:bg-primary/20 hover:text-primary transition-all duration-300" data-category="all">All</button>
+        <button class="filter-pill whitespace-nowrap px-4 py-2 border border-white/5 text-secondary hover:border-primary/40 hover:text-primary bg-surface/40 rounded-full font-label-sm text-[9px] uppercase tracking-widest transition-all duration-300" data-category="chains">Chains</button>
+        <button class="filter-pill whitespace-nowrap px-4 py-2 border border-white/5 text-secondary hover:border-primary/40 hover:text-primary bg-surface/40 rounded-full font-label-sm text-[9px] uppercase tracking-widest transition-all duration-300" data-category="watches">Watches</button>
+        <button class="filter-pill whitespace-nowrap px-4 py-2 border border-white/5 text-secondary hover:border-primary/40 hover:text-primary bg-surface/40 rounded-full font-label-sm text-[9px] uppercase tracking-widest transition-all duration-300" data-category="pendants">Pendants</button>
+        <button class="filter-pill whitespace-nowrap px-4 py-2 border border-white/5 text-secondary hover:border-primary/40 hover:text-primary bg-surface/40 rounded-full font-label-sm text-[9px] uppercase tracking-widest transition-all duration-300" data-category="rings">Rings</button>
+        <button class="filter-pill whitespace-nowrap px-4 py-2 border border-white/5 text-secondary hover:border-primary/40 hover:text-primary bg-surface/40 rounded-full font-label-sm text-[9px] uppercase tracking-widest transition-all duration-300" data-category="bracelets">Bracelets</button>
+        <button class="filter-pill whitespace-nowrap px-4 py-2 border border-white/5 text-secondary hover:border-primary/40 hover:text-primary bg-surface/40 rounded-full font-label-sm text-[9px] uppercase tracking-widest transition-all duration-300" data-category="necklaces">Necklaces</button>
+        <button class="filter-pill whitespace-nowrap px-4 py-2 border border-white/5 text-secondary hover:border-primary/40 hover:text-primary bg-surface/40 rounded-full font-label-sm text-[9px] uppercase tracking-widest transition-all duration-300" data-category="bands">Bands</button>
+        <button class="filter-pill whitespace-nowrap px-4 py-2 border border-white/5 text-secondary hover:border-primary/40 hover:text-primary bg-surface/40 rounded-full font-label-sm text-[9px] uppercase tracking-widest transition-all duration-300" data-category="earrings">Earrings</button>
+        <button class="filter-pill whitespace-nowrap px-4 py-2 border border-white/5 text-secondary hover:border-primary/40 hover:text-primary bg-surface/40 rounded-full font-label-sm text-[9px] uppercase tracking-widest transition-all duration-300" data-category="chokers">Chokers</button>
+    </div>
+
+    <!-- Sorting Dropdown -->
+    <div class="flex items-center gap-3">
+        <span class="font-label-sm text-[9px] text-primary uppercase tracking-widest whitespace-nowrap">Sort</span>
+        <div class="relative">
+            <select id="collection-sort" class="bg-surface-container-lowest border border-white/10 rounded-md pl-4 pr-10 py-3 text-[10px] uppercase tracking-wider font-semibold focus:border-primary focus:ring-0 transition-luxury text-on-surface appearance-none cursor-pointer">
+                <option value="featured">Featured</option>
+                <option value="price-asc">Price: Low-High</option>
+                <option value="price-desc">Price: High-Low</option>
+            </select>
+            <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-primary pointer-events-none text-base">expand_more</span>
+        </div>
+    </div>
+</div>
+
+<!-- Filtered Grid View (Visible only during filtering) -->
+<div id="filtered-grid-container" class="grid grid-cols-1 md:grid-cols-3 gap-gutter hidden">
+    <!-- Dynamic Filtered Cards Rendered Here -->
+</div>
+
+<!-- Original Bento Grid Layout -->
+<div id="original-bento-grid" class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="group relative overflow-hidden h-[450px] border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(212,175,55,0.12)] bg-surface/20 cursor-pointer" data-product data-id="aurelian-link" data-title="The Aurelian Link" data-price="42500" data-category="chains" data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuBvThM2bKI9gkEUjcaROhP9T4utXgs0eOYkPkBe_6HhQHGUxClgWrgkBKDp4NWPMtE3twIYFM86NQ8prn8ZoeaN1l5sSQDz9Nj9PHNxwiteQbNNxGKk0hUgfVYktcCMVYINROg1A9XIOoAoPdmE7rWwaxvc2NgztW5hpN28P3LUjOLtRDiJtLKuv6qWBlknBl-PqXEUygKptIwn3SS6uwAmJuHq-ae8-YH1wZkEL-tx07w7t93xbKhljNofI0SuaMV68NS0TB41TvLq" data-featured="true">
+<div class="absolute top-6 left-6 z-20 bg-surface/60 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full font-label-sm text-[9px] tracking-widest text-primary uppercase shadow-lg group-hover:border-primary/40 transition-luxury duration-500">Bespoke Chains</div>
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Ultra-high-end diamond tennis necklace draped elegantly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvThM2bKI9gkEUjcaROhP9T4utXgs0eOYkPkBe_6HhQHGUxClgWrgkBKDp4NWPMtE3twIYFM86NQ8prn8ZoeaN1l5sSQDz9Nj9PHNxwiteQbNNxGKk0hUgfVYktcCMVYINROg1A9XIOoAoPdmE7rWwaxvc2NgztW5hpN28P3LUjOLtRDiJtLKuv6qWBlknBl-PqXEUygKptIwn3SS6uwAmJuHq-ae8-YH1wZkEL-tx07w7t93xbKhljNofI0SuaMV68NS0TB41TvLq"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-luxury duration-700"></div>
+<div class="absolute bottom-8 left-8 right-8 transform translate-y-4 group-hover:translate-y-0 transition-luxury duration-700">
+<div class="flex justify-between items-baseline mb-4 gap-2">
+<h4 class="font-title-md text-on-surface text-xl">The Aurelian Link</h4>
+<span class="font-title-md text-primary text-[15px] font-medium">$42,500 AUD</span>
+</div>
+<div class="flex gap-4">
+<button class="explore-btn font-label-sm text-on-surface border-b border-on-surface hover:text-primary hover:border-primary transition-luxury" data-id="aurelian-link">EXPLORE PIECE</button>
+<button class="add-to-bag-btn font-label-sm text-primary border border-primary/30 px-3 py-1.5 hover:bg-primary hover:text-on-primary transition-luxury text-[11px]" data-id="aurelian-link" data-title="The Aurelian Link" data-price="42500" data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuBvThM2bKI9gkEUjcaROhP9T4utXgs0eOYkPkBe_6HhQHGUxClgWrgkBKDp4NWPMtE3twIYFM86NQ8prn8ZoeaN1l5sSQDz9Nj9PHNxwiteQbNNxGKk0hUgfVYktcCMVYINROg1A9XIOoAoPdmE7rWwaxvc2NgztW5hpN28P3LUjOLtRDiJtLKuv6qWBlknBl-PqXEUygKptIwn3SS6uwAmJuHq-ae8-YH1wZkEL-tx07w7t93xbKhljNofI0SuaMV68NS0TB41TvLq">ADD TO BAG</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative overflow-hidden h-[450px] border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(212,175,55,0.12)] bg-surface/20 cursor-pointer" data-product data-id="bespoke-watches" data-title="Bespoke Watches" data-price="85000" data-category="watches" data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuAEZuYUEKJD1M-wzyVvlr0mHJahaERf_u3iGHj7xOzdj5FQHsR4CT5M096ZEyU0vQw0AM6uYo_h8jav__QdsAKfNjXw8SmmgWEVzzTOzrlI0u-syv2_tYT1hGAWdlZ346-EULiVUhbMq_TjpifV5I8t0aFZyVyil2xYQzAc_FVC28bfTPET41MOYNuSEQ9CStWdhXXJOalP13pFwCVTNJc8jNKT2mStavgJfpQrVI4yDU1VhBcsSoctaUU4tElJSHp2RzQGqR2tPuAc" data-featured="true">
+<div class="absolute top-6 left-6 z-20 bg-surface/60 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full font-label-sm text-[9px] tracking-widest text-primary uppercase shadow-lg group-hover:border-primary/40 transition-luxury duration-500">Bespoke Watches</div>
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Close-up of a customized luxury watch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEZuYUEKJD1M-wzyVvlr0mHJahaERf_u3iGHj7xOzdj5FQHsR4CT5M096ZEyU0vQw0AM6uYo_h8jav__QdsAKfNjXw8SmmgWEVzzTOzrlI0u-syv2_tYT1hGAWdlZ346-EULiVUhbMq_TjpifV5I8t0aFZyVyil2xYQzAc_FVC28bfTPET41MOYNuSEQ9CStWdhXXJOalP13pFwCVTNJc8jNKT2mStavgJfpQrVI4yDU1VhBcsSoctaUU4tElJSHp2RzQGqR2tPuAc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-luxury duration-700"></div>
+<div class="absolute bottom-8 left-8 right-8 transform translate-y-4 group-hover:translate-y-0 transition-luxury duration-700">
+<div class="flex justify-between items-baseline mb-4 gap-2">
+<h4 class="font-title-md text-on-surface text-xl">Bespoke Watches</h4>
+<span class="font-title-md text-primary text-[15px] font-medium">$85,000 AUD</span>
+</div>
+<div class="flex gap-4">
+<button class="explore-btn font-label-sm text-on-surface border-b border-on-surface hover:text-primary hover:border-primary transition-luxury" data-id="bespoke-watches">EXPLORE PIECE</button>
+<button class="add-to-bag-btn font-label-sm text-primary border border-primary/30 px-3 py-1.5 hover:bg-primary hover:text-on-primary transition-luxury text-[11px]" data-id="bespoke-watches" data-title="Bespoke Watches" data-price="85000" data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuAEZuYUEKJD1M-wzyVvlr0mHJahaERf_u3iGHj7xOzdj5FQHsR4CT5M096ZEyU0vQw0AM6uYo_h8jav__QdsAKfNjXw8SmmgWEVzzTOzrlI0u-syv2_tYT1hGAWdlZ346-EULiVUhbMq_TjpifV5I8t0aFZyVyil2xYQzAc_FVC28bfTPET41MOYNuSEQ9CStWdhXXJOalP13pFwCVTNJc8jNKT2mStavgJfpQrVI4yDU1VhBcsSoctaUU4tElJSHp2RzQGqR2tPuAc">ADD TO BAG</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative overflow-hidden h-[450px] border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(212,175,55,0.12)] bg-surface/20 cursor-pointer" data-product data-id="personalized-icons" data-title="Personalized Icons" data-price="18500" data-category="pendants" data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuAPwvrcGAtbE-T_-gxPvhRQQoHBkvyn122KdAJfDDuTuighl8ObTItklA4LsSuT7rNPdbDxO0CFADD4bViSF17zLmJjN8WUFvzpX6Ywmn5jr9kAt4BDJwarPFbFN3jQT8dhAQyOzI9Dj4YIZ8wZoGpScQYEU8BTtI9MKBRhSaKehle0BOqY1Y_haIqKDWtW5p_YgwJ6rV4Y3L1zpsARh2768Np0h-jV2s7XBCekaaknymQWmO-y_t32GsrOIJpcwlWAyk1lYav2WtbN" data-featured="true">
+<div class="absolute top-6 left-6 z-20 bg-surface/60 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full font-label-sm text-[9px] tracking-widest text-primary uppercase shadow-lg group-hover:border-primary/40 transition-luxury duration-500">Custom Pendants</div>
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="A detailed shot of a custom diamond pendant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPwvrcGAtbE-T_-gxPvhRQQoHBkvyn122KdAJfDDuTuighl8ObTItklA4LsSuT7rNPdbDxO0CFADD4bViSF17zLmJjN8WUFvzpX6Ywmn5jr9kAt4BDJwarPFbFN3jQT8dhAQyOzI9Dj4YIZ8wZoGpScQYEU8BTtI9MKBRhSaKehle0BOqY1Y_haIqKDWtW5p_YgwJ6rV4Y3L1zpsARh2768Np0h-jV2s7XBCekaaknymQWmO-y_t32GsrOIJpcwlWAyk1lYav2WtbN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-luxury duration-700"></div>
+<div class="absolute bottom-8 left-8 right-8 transform translate-y-4 group-hover:translate-y-0 transition-luxury duration-700">
+<div class="flex justify-between items-baseline mb-4 gap-2">
+<h4 class="font-title-md text-on-surface text-xl">Personalized Icons</h4>
+<span class="font-title-md text-primary text-[15px] font-medium">$18,500 AUD</span>
+</div>
+<div class="flex gap-4">
+<button class="explore-btn font-label-sm text-on-surface border-b border-on-surface hover:text-primary hover:border-primary transition-luxury" data-id="personalized-icons">EXPLORE PIECE</button>
+<button class="add-to-bag-btn font-label-sm text-primary border border-primary/30 px-3 py-1.5 hover:bg-primary hover:text-on-primary transition-luxury text-[11px]" data-id="personalized-icons" data-title="Personalized Icons" data-price="18500" data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuAPwvrcGAtbE-T_-gxPvhRQQoHBkvyn122KdAJfDDuTuighl8ObTItklA4LsSuT7rNPdbDxO0CFADD4bViSF17zLmJjN8WUFvzpX6Ywmn5jr9kAt4BDJwarPFbFN3jQT8dhAQyOzI9Dj4YIZ8wZoGpScQYEU8BTtI9MKBRhSaKehle0BOqY1Y_haIqKDWtW5p_YgwJ6rV4Y3L1zpsARh2768Np0h-jV2s7XBCekaaknymQWmO-y_t32GsrOIJpcwlWAyk1lYav2WtbN">ADD TO BAG</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative overflow-hidden h-[450px] border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(212,175,55,0.12)] bg-surface/20 cursor-pointer" data-product data-id="solitaire-crown" data-title="The Solitaire Crown" data-price="24000" data-category="rings" data-img="./705771957_17925504222346799_2875141349457387343_n.jpg">
+<div class="absolute top-6 left-6 z-20 bg-surface/60 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full font-label-sm text-[9px] tracking-widest text-primary uppercase shadow-lg group-hover:border-primary/40 transition-luxury duration-500">Bespoke Rings</div>
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="The Solitaire Crown - Bespoke Ring" src="./705771957_17925504222346799_2875141349457387343_n.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-luxury duration-700"></div>
+<div class="absolute bottom-8 left-8 right-8 transform translate-y-4 group-hover:translate-y-0 transition-luxury duration-700">
+<div class="flex justify-between items-baseline mb-4 gap-2">
+<h4 class="font-title-md text-on-surface text-xl">The Solitaire Crown</h4>
+<span class="font-title-md text-primary text-[15px] font-medium">$24,000 AUD</span>
+</div>
+<div class="flex gap-4">
+<button class="explore-btn font-label-sm text-on-surface border-b border-on-surface hover:text-primary hover:border-primary transition-luxury" data-id="solitaire-crown">EXPLORE PIECE</button>
+<button class="add-to-bag-btn font-label-sm text-primary border border-primary/30 px-3 py-1.5 hover:bg-primary hover:text-on-primary transition-luxury text-[11px]" data-id="solitaire-crown" data-title="The Solitaire Crown" data-price="24000" data-img="./705771957_17925504222346799_2875141349457387343_n.jpg">ADD TO BAG</button>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group relative overflow-hidden h-[450px] border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(212,175,55,0.12)] bg-surface/20 cursor-pointer" data-product data-id="imperial-cuff" data-title="The Imperial Cuff" data-price="32500" data-category="bracelets" data-img="./705976141_17925504249346799_5706232769298046447_n.jpg">
+<div class="absolute top-6 left-6 z-20 bg-surface/60 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full font-label-sm text-[9px] tracking-widest text-primary uppercase shadow-lg group-hover:border-primary/40 transition-luxury duration-500">Diamond Bracelets</div>
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="The Imperial Cuff - Diamond Bracelet" src="./705976141_17925504249346799_5706232769298046447_n.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-luxury duration-700"></div>
+<div class="absolute bottom-8 left-8 right-8 transform translate-y-4 group-hover:translate-y-0 transition-luxury duration-700">
+<div class="flex justify-between items-baseline mb-4 gap-2">
+<h4 class="font-title-md text-on-surface text-xl">The Imperial Cuff</h4>
+<span class="font-title-md text-primary text-[15px] font-medium">$32,500 AUD</span>
+</div>
+<div class="flex gap-4">
+<button class="explore-btn font-label-sm text-on-surface border-b border-on-surface hover:text-primary hover:border-primary transition-luxury" data-id="imperial-cuff">EXPLORE PIECE</button>
+<button class="add-to-bag-btn font-label-sm text-primary border border-primary/30 px-3 py-1.5 hover:bg-primary hover:text-on-primary transition-luxury text-[11px]" data-id="imperial-cuff" data-title="The Imperial Cuff" data-price="32500" data-img="./705976141_17925504249346799_5706232769298046447_n.jpg">ADD TO BAG</button>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group relative overflow-hidden h-[450px] border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(212,175,55,0.12)] bg-surface/20 cursor-pointer" data-product data-id="luminous-drop" data-title="The Luminous Drop" data-price="15000" data-category="necklaces" data-img="./707378203_17925504267346799_8675910774493224825_n.jpg">
+<div class="absolute top-6 left-6 z-20 bg-surface/60 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full font-label-sm text-[9px] tracking-widest text-primary uppercase shadow-lg group-hover:border-primary/40 transition-luxury duration-500">Fine Necklaces</div>
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="The Luminous Drop - Fine Necklace" src="./707378203_17925504267346799_8675910774493224825_n.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-luxury duration-700"></div>
+<div class="absolute bottom-8 left-8 right-8 transform translate-y-4 group-hover:translate-y-0 transition-luxury duration-700">
+<div class="flex justify-between items-baseline mb-4 gap-2">
+<h4 class="font-title-md text-on-surface text-xl">The Luminous Drop</h4>
+<span class="font-title-md text-primary text-[15px] font-medium">$15,000 AUD</span>
+</div>
+<div class="flex gap-4">
+<button class="explore-btn font-label-sm text-on-surface border-b border-on-surface hover:text-primary hover:border-primary transition-luxury" data-id="luminous-drop">EXPLORE PIECE</button>
+<button class="add-to-bag-btn font-label-sm text-primary border border-primary/30 px-3 py-1.5 hover:bg-primary hover:text-on-primary transition-luxury text-[11px]" data-id="luminous-drop" data-title="The Luminous Drop" data-price="15000" data-img="./707378203_17925504267346799_8675910774493224825_n.jpg">ADD TO BAG</button>
+</div>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="group relative overflow-hidden h-[450px] border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(212,175,55,0.12)] bg-surface/20 cursor-pointer" data-product data-id="aurelia-band" data-title="The Aurelia Band" data-price="9800" data-category="bands" data-img="./707498839_17925504246346799_3414581256838250555_n.jpg">
+<div class="absolute top-6 left-6 z-20 bg-surface/60 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full font-label-sm text-[9px] tracking-widest text-primary uppercase shadow-lg group-hover:border-primary/40 transition-luxury duration-500">Bespoke Bands</div>
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="The Aurelia Band - Bespoke Band" src="./707498839_17925504246346799_3414581256838250555_n.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-luxury duration-700"></div>
+<div class="absolute bottom-8 left-8 right-8 transform translate-y-4 group-hover:translate-y-0 transition-luxury duration-700">
+<div class="flex justify-between items-baseline mb-4 gap-2">
+<h4 class="font-title-md text-on-surface text-xl">The Aurelia Band</h4>
+<span class="font-title-md text-primary text-[15px] font-medium">$9,800 AUD</span>
+</div>
+<div class="flex gap-4">
+<button class="explore-btn font-label-sm text-on-surface border-b border-on-surface hover:text-primary hover:border-primary transition-luxury" data-id="aurelia-band">EXPLORE PIECE</button>
+<button class="add-to-bag-btn font-label-sm text-primary border border-primary/30 px-3 py-1.5 hover:bg-primary hover:text-on-primary transition-luxury text-[11px]" data-id="aurelia-band" data-title="The Aurelia Band" data-price="9800" data-img="./707498839_17925504246346799_3414581256838250555_n.jpg">ADD TO BAG</button>
+</div>
+</div>
+</div>
+<!-- Card 8 -->
+<div class="group relative overflow-hidden h-[450px] border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(212,175,55,0.12)] bg-surface/20 cursor-pointer" data-product data-id="celestial-drop" data-title="The Celestial Drop" data-price="12000" data-category="earrings" data-img="./707750230_17925911454346799_2825175959127781560_n.jpg">
+<div class="absolute top-6 left-6 z-20 bg-surface/60 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full font-label-sm text-[9px] tracking-widest text-primary uppercase shadow-lg group-hover:border-primary/40 transition-luxury duration-500">Luxury Earrings</div>
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="The Celestial Drop - Luxury Earrings" src="./707750230_17925911454346799_2825175959127781560_n.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-luxury duration-700"></div>
+<div class="absolute bottom-8 left-8 right-8 transform translate-y-4 group-hover:translate-y-0 transition-luxury duration-700">
+<div class="flex justify-between items-baseline mb-4 gap-2">
+<h4 class="font-title-md text-on-surface text-xl">The Celestial Drop</h4>
+<span class="font-title-md text-primary text-[15px] font-medium">$12,000 AUD</span>
+</div>
+<div class="flex gap-4">
+<button class="explore-btn font-label-sm text-on-surface border-b border-on-surface hover:text-primary hover:border-primary transition-luxury" data-id="celestial-drop">EXPLORE PIECE</button>
+<button class="add-to-bag-btn font-label-sm text-primary border border-primary/30 px-3 py-1.5 hover:bg-primary hover:text-on-primary transition-luxury text-[11px]" data-id="celestial-drop" data-title="The Celestial Drop" data-price="12000" data-img="./707750230_17925911454346799_2825175959127781560_n.jpg">ADD TO BAG</button>
+</div>
+</div>
+</div>
+<!-- Card 9 -->
+<div class="group relative overflow-hidden h-[450px] border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(212,175,55,0.12)] bg-surface/20 cursor-pointer" data-product data-id="dynasty-collar" data-title="The Dynasty Collar" data-price="55000" data-category="chokers" data-img="./707838591_17925504231346799_244455926094110234_n.jpg">
+<div class="absolute top-6 left-6 z-20 bg-surface/60 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full font-label-sm text-[9px] tracking-widest text-primary uppercase shadow-lg group-hover:border-primary/40 transition-luxury duration-500">Royal Chokers</div>
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="The Dynasty Collar - Royal Choker" src="./707838591_17925504231346799_244455926094110234_n.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-luxury duration-700"></div>
+<div class="absolute bottom-8 left-8 right-8 transform translate-y-4 group-hover:translate-y-0 transition-luxury duration-700">
+<div class="flex justify-between items-baseline mb-4 gap-2">
+<h4 class="font-title-md text-on-surface text-xl">The Dynasty Collar</h4>
+<span class="font-title-md text-primary text-[15px] font-medium">$55,000 AUD</span>
+</div>
+<div class="flex gap-4">
+<button class="explore-btn font-label-sm text-on-surface border-b border-on-surface hover:text-primary hover:border-primary transition-luxury" data-id="dynasty-collar">EXPLORE PIECE</button>
+<button class="add-to-bag-btn font-label-sm text-primary border border-primary/30 px-3 py-1.5 hover:bg-primary hover:text-on-primary transition-luxury text-[11px]" data-id="dynasty-collar" data-title="The Dynasty Collar" data-price="55000" data-img="./707838591_17925504231346799_244455926094110234_n.jpg">ADD TO BAG</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Custom Jewellery Process Section -->
+<section id="process" class="reveal-hidden py-32 bg-surface-container-lowest border-t border-primary/10 relative">
+    <div class="absolute right-0 top-1/4 w-1/4 h-[350px] bg-primary/5 blur-[120px] pointer-events-none"></div>
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="max-w-2xl mb-20">
+            <span class="font-label-sm text-primary tracking-[0.3em] mb-4 block uppercase text-[11px]">THE CREATIVE PATHWAY</span>
+            <h3 class="font-display-lg text-4xl md:text-5xl text-on-surface">The Custom Design Journey</h3>
+            <p class="font-body-lg text-secondary mt-6">
+                From a raw idea to an iconic heirloom. Every step of our five-stage custom jewelry process is crafted to guarantee absolute precision and trust.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8 pt-16 relative">
+            <!-- Background Connecting Line -->
+            <div class="hidden md:block absolute top-[36px] left-[5%] right-[5%] h-[1px] bg-primary/15 z-0"></div>
+            <!-- Step 1 -->
+            <div class="group relative flex flex-col transition-all duration-500 hover:-translate-y-1 z-10">
+                <div class="font-display-lg text-4xl text-primary mb-6 font-bold tracking-wider relative bg-surface-container-lowest pr-6 w-max z-10 group-hover:scale-110 group-hover:text-primary-container transition-transform duration-500 select-none">01</div>
+                <div class="w-10 h-[2px] bg-primary/20 mb-6 group-hover:w-full group-hover:bg-primary transition-all duration-500"></div>
+                <h4 class="font-title-md text-on-surface text-lg mb-3 uppercase tracking-wider group-hover:text-primary transition-colors duration-300">Share Your Vision</h4>
+                <p class="font-body-lg text-secondary text-sm leading-relaxed">
+                    Initiate a consultation or DM us your concepts. Share references, dimensions, and materials to establish the initial design blueprint.
+                </p>
+            </div>
+            <!-- Step 2 -->
+            <div class="group relative flex flex-col transition-all duration-500 hover:-translate-y-1 z-10">
+                <div class="font-display-lg text-4xl text-primary mb-6 font-bold tracking-wider relative bg-surface-container-lowest pr-6 w-max z-10 group-hover:scale-110 group-hover:text-primary-container transition-transform duration-500 select-none">02</div>
+                <div class="w-10 h-[2px] bg-primary/20 mb-6 group-hover:w-full group-hover:bg-primary transition-all duration-500"></div>
+                <h4 class="font-title-md text-on-surface text-lg mb-3 uppercase tracking-wider group-hover:text-primary transition-colors duration-300">3D CAD Approval</h4>
+                <p class="font-body-lg text-secondary text-sm leading-relaxed">
+                    Review a digital, photorealistic 3D rendering of your customized piece. We refine details and adjust dimensions until you approve.
+                </p>
+            </div>
+            <!-- Step 3 -->
+            <div class="group relative flex flex-col transition-all duration-500 hover:-translate-y-1 z-10">
+                <div class="font-display-lg text-4xl text-primary mb-6 font-bold tracking-wider relative bg-surface-container-lowest pr-6 w-max z-10 group-hover:scale-110 group-hover:text-primary-container transition-transform duration-500 select-none">03</div>
+                <div class="w-10 h-[2px] bg-primary/20 mb-6 group-hover:w-full group-hover:bg-primary transition-all duration-500"></div>
+                <h4 class="font-title-md text-on-surface text-lg mb-3 uppercase tracking-wider group-hover:text-primary transition-colors duration-300">Craft &amp; Set</h4>
+                <p class="font-body-lg text-secondary text-sm leading-relaxed">
+                    Our master artisans cast the custom gold alloy and hand-set each selected VVS+ diamond under surgical-grade stereomicroscopes.
+                </p>
+            </div>
+            <!-- Step 4 -->
+            <div class="group relative flex flex-col transition-all duration-500 hover:-translate-y-1 z-10">
+                <div class="font-display-lg text-4xl text-primary mb-6 font-bold tracking-wider relative bg-surface-container-lowest pr-6 w-max z-10 group-hover:scale-110 group-hover:text-primary-container transition-transform duration-500 select-none">04</div>
+                <div class="w-10 h-[2px] bg-primary/20 mb-6 group-hover:w-full group-hover:bg-primary transition-all duration-500"></div>
+                <h4 class="font-title-md text-on-surface text-lg mb-3 uppercase tracking-wider group-hover:text-primary transition-colors duration-300">Quality Audit</h4>
+                <p class="font-body-lg text-secondary text-sm leading-relaxed">
+                    A multi-point gemological inspection audits stone security, metal polish, and dimensional accuracy to verify physical perfection.
+                </p>
+            </div>
+            <!-- Step 5 -->
+            <div class="group relative flex flex-col transition-all duration-500 hover:-translate-y-1 z-10">
+                <div class="font-display-lg text-4xl text-primary mb-6 font-bold tracking-wider relative bg-surface-container-lowest pr-6 w-max z-10 group-hover:scale-110 group-hover:text-primary-container transition-transform duration-500 select-none">05</div>
+                <div class="w-10 h-[2px] bg-primary/20 mb-6 group-hover:w-full group-hover:bg-primary transition-all duration-500"></div>
+                <h4 class="font-title-md text-on-surface text-lg mb-3 uppercase tracking-wider group-hover:text-primary transition-colors duration-300">Secure Delivery</h4>
+                <p class="font-body-lg text-secondary text-sm leading-relaxed">
+                    Your masterpiece is encased in a premium signature box and sent via fully insured, high-security express courier worldwide.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Atelier Customizer (Interactive CAD Builder) -->
+<section id="customizer" class="reveal-hidden py-32 bg-surface border-t border-primary/10 relative overflow-hidden">
+    <!-- Background glowing orbs -->
+    <div class="absolute -left-20 top-1/4 w-1/4 h-[350px] bg-primary/5 blur-[120px] pointer-events-none"></div>
+    <div class="absolute right-0 bottom-1/4 w-1/4 h-[350px] bg-primary/5 blur-[120px] pointer-events-none"></div>
+    
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <!-- Section Header -->
+        <div class="max-w-2xl mb-20">
+            <span class="font-label-sm text-primary tracking-[0.3em] mb-4 block uppercase text-[11px]">ATELIER CUSTOMIZER</span>
+            <h3 class="font-display-lg text-4xl md:text-5xl text-on-surface">Design Your Custom Legacy</h3>
+            <p class="font-body-lg text-secondary mt-6">
+                Interact with our raw design workstation. Select your metals, diamond configurations, and custom engraving, and watch your unique piece come to life.
+            </p>
+        </div>
+
+        <!-- Customizer Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            <!-- Left Side: Dynamic Preview CAD Frame -->
+            <div class="lg:col-span-5 w-full flex flex-col items-center">
+                <div class="relative w-full aspect-square rounded-2xl border border-primary/20 bg-gradient-to-br from-surface-container-high/40 to-black/60 backdrop-blur-md p-8 shadow-2xl flex flex-col justify-between overflow-hidden group">
+                    <!-- Corner threads -->
+                    <div class="absolute -top-1 -left-1 w-5 h-5 border-t border-l border-primary/40"></div>
+                    <div class="absolute -top-1 -right-1 w-5 h-5 border-t border-r border-primary/40"></div>
+                    <div class="absolute -bottom-1 -left-1 w-5 h-5 border-b border-l border-primary/40"></div>
+                    <div class="absolute -bottom-1 -right-1 w-5 h-5 border-b border-r border-primary/40"></div>
+                    
+                    <!-- CAD grid lines background -->
+                    <div class="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(212,175,55,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.07)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none z-0"></div>
+                    
+                    <div class="flex justify-between items-center z-10 w-full">
+                        <span class="font-label-sm text-[8px] text-primary tracking-widest uppercase">SYDNEY WORKSHOP CAD</span>
+                        <span id="cad-dimensions" class="font-label-sm text-[8px] text-secondary tracking-widest font-mono">SCALE 1:1</span>
+                    </div>
+
+                    <!-- Main Dynamic Preview Canvas -->
+                    <div class="w-full flex-grow flex items-center justify-center relative z-10 my-4">
+                        <canvas id="customizer-canvas" class="w-full h-full max-w-[280px] max-h-[280px] block transition-transform duration-300"></canvas>
+                        <!-- Sparkle flare layers -->
+                        <div class="absolute inset-0 pointer-events-none z-20 flex items-center justify-center">
+                            <div class="w-full h-full relative" id="cad-sparkles"></div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-end z-10 w-full border-t border-white/5 pt-4">
+                        <div class="flex flex-col gap-0.5">
+                            <span class="text-[7px] text-secondary uppercase tracking-widest">Configuration ID</span>
+                            <span id="cad-config-id" class="font-label-sm text-[9px] text-primary font-mono font-semibold uppercase">AJ-CUSTOM-83</span>
+                        </div>
+                        <div class="flex flex-col gap-0.5 items-end">
+                            <span class="text-[7px] text-secondary uppercase tracking-widest">Estimated Value</span>
+                            <span id="cad-estimated-price" class="font-title-md text-primary text-sm font-semibold">$15,500 AUD</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="font-body-lg text-secondary text-[11px] leading-relaxed mt-4 italic text-center max-w-sm">
+                    ✦ Preview shows a photorealistic CAD simulation. Crafting will match selected metal type and diamond sizes precisely. ✦
+                </p>
+            </div>
+
+            <!-- Right Side: Customizer Controls -->
+            <div class="lg:col-span-7 space-y-8 bg-surface-container-low/30 border border-white/5 p-8 lg:p-12 rounded-2xl shadow-xl backdrop-blur-sm">
+                <!-- Select Item Type -->
+                <div class="space-y-3">
+                    <label class="font-label-sm text-primary uppercase text-[8px] tracking-widest block">1. Select Base Architecture</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <button class="custom-item-type-btn active border border-primary text-primary px-3 py-3 rounded-md text-[10px] uppercase font-semibold tracking-wider bg-primary/5 hover:bg-primary/10 transition-all duration-300" data-type="ring">Eternity Ring</button>
+                        <button class="custom-item-type-btn border border-white/10 text-secondary px-3 py-3 rounded-md text-[10px] uppercase font-semibold tracking-wider hover:border-primary/40 hover:text-primary transition-all duration-300" data-type="chain">Cuban Chain</button>
+                        <button class="custom-item-type-btn border border-white/10 text-secondary px-3 py-3 rounded-md text-[10px] uppercase font-semibold tracking-wider hover:border-primary/40 hover:text-primary transition-all duration-300" data-type="pendant">Name Pendant</button>
+                    </div>
+                </div>
+
+                <!-- Select Metal Type -->
+                <div class="space-y-3">
+                    <label class="font-label-sm text-primary uppercase text-[8px] tracking-widest block">2. Gold/Platinum Alloy</label>
+                    <div class="grid grid-cols-4 gap-3">
+                        <button class="custom-metal-btn active border border-primary text-primary px-2 py-3 rounded-md text-[9px] uppercase font-semibold tracking-wider bg-primary/5 hover:bg-primary/10 transition-all duration-300" data-metal="yellow" data-label="18k Yellow Gold" data-cost="0">18k Yellow</button>
+                        <button class="custom-metal-btn border border-white/10 text-secondary px-2 py-3 rounded-md text-[9px] uppercase font-semibold tracking-wider hover:border-primary/40 hover:text-primary transition-all duration-300" data-metal="white" data-label="18k White Gold" data-cost="450">18k White</button>
+                        <button class="custom-metal-btn border border-white/10 text-secondary px-2 py-3 rounded-md text-[9px] uppercase font-semibold tracking-wider hover:border-primary/40 hover:text-primary transition-all duration-300" data-metal="rose" data-label="18k Rose Gold" data-cost="350">18k Rose</button>
+                        <button class="custom-metal-btn border border-white/10 text-secondary px-2 py-3 rounded-md text-[9px] uppercase font-semibold tracking-wider hover:border-primary/40 hover:text-primary transition-all duration-300" data-metal="platinum" data-label="Platinum" data-cost="1800">Platinum</button>
+                    </div>
+                </div>
+
+                <!-- Select Diamond Cut -->
+                <div class="space-y-3">
+                    <label class="font-label-sm text-primary uppercase text-[8px] tracking-widest block">3. Diamond Cut Profile</label>
+                    <div class="grid grid-cols-4 gap-3">
+                        <button class="custom-cut-btn active border border-primary text-primary px-2 py-3 rounded-md text-[9px] uppercase font-semibold tracking-wider bg-primary/5 hover:bg-primary/10 transition-all duration-300" data-cut="round">Round Brilliant</button>
+                        <button class="custom-cut-btn border border-white/10 text-secondary px-2 py-3 rounded-md text-[9px] uppercase font-semibold tracking-wider hover:border-primary/40 hover:text-primary transition-all duration-300" data-cut="princess">Princess Cut</button>
+                        <button class="custom-cut-btn border border-white/10 text-secondary px-2 py-3 rounded-md text-[9px] uppercase font-semibold tracking-wider hover:border-primary/40 hover:text-primary transition-all duration-300" data-cut="emerald">Emerald Cut</button>
+                        <button class="custom-cut-btn border border-white/10 text-secondary px-2 py-3 rounded-md text-[9px] uppercase font-semibold tracking-wider hover:border-primary/40 hover:text-primary transition-all duration-300" data-cut="baguette">Baguette Cut</button>
+                    </div>
+                </div>
+
+                <!-- Diamond Grade -->
+                <div class="space-y-3">
+                    <label class="font-label-sm text-primary uppercase text-[8px] tracking-widest block">4. Diamond Grade / Clarity</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <button class="custom-grade-btn active border border-primary text-primary px-2 py-3 rounded-md text-[9px] uppercase font-semibold tracking-wider bg-primary/5 hover:bg-primary/10 transition-all duration-300" data-grade="vvs" data-label="VVS+ Clarity (D-F Color)" data-cost="0">VVS+ Standard</button>
+                        <button class="custom-grade-btn border border-white/10 text-secondary px-2 py-3 rounded-md text-[9px] uppercase font-semibold tracking-wider hover:border-primary/40 hover:text-primary transition-all duration-300" data-grade="vvs1" data-label="VVS1 Flawless (D Color)" data-cost="2500">VVS1 Flawless</button>
+                        <button class="custom-grade-btn border border-white/10 text-secondary px-2 py-3 rounded-md text-[9px] uppercase font-semibold tracking-wider hover:border-primary/40 hover:text-primary transition-all duration-300" data-grade="flawless" data-label="FL Flawless Investment Grade" data-cost="6500">FL Investment</button>
+                    </div>
+                </div>
+
+                <!-- Custom Engraving Input -->
+                <div class="space-y-3">
+                    <div class="flex justify-between items-baseline">
+                        <label class="font-label-sm text-primary uppercase text-[8px] tracking-widest block">5. Signature Engraving (Concave Overlay)</label>
+                        <span class="text-[9px] text-secondary font-mono" id="engraving-count">0 / 12 characters</span>
+                    </div>
+                    <input type="text" id="customizer-engraving" maxlength="12" placeholder="ENTER INITIAlS OR NAME (E.G. AJAY)" class="w-full bg-surface-container-lowest border border-white/10 rounded-md px-4 py-3 text-xs focus:border-primary focus:ring-0 placeholder-secondary/35 text-on-surface uppercase font-mono tracking-widest">
+                </div>
+
+                <!-- Customizer Add to Bag button -->
+                <div class="border-t border-white/5 pt-8 mt-4">
+                    <button id="customizer-add-to-bag" class="pulse-gold w-full bg-primary-container text-on-primary py-4 font-label-sm uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-luxury flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-sm">construction</span>
+                        ADD CUSTOMIZED MASTERPIECE TO BAG
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Signature Brand Section (Atmospheric) -->
+<section id="atelier" class="reveal-hidden py-32 bg-surface-container-low overflow-hidden relative">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[120px] pointer-events-none"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 items-center gap-20">
+<div class="order-2 md:order-1">
+<div class="relative w-full aspect-square max-w-lg mx-auto group">
+<div class="absolute -inset-6 border border-primary/5 rotate-[3deg] group-hover:rotate-[5deg] transition-transform duration-1000 z-0"></div>
+<div class="absolute -inset-4 border border-primary/20 animate-[pulse_4s_infinite] z-0"></div>
+<img class="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-1000 relative z-10 border border-white/5 group-hover:border-primary/40 shadow-2xl" alt="A master jeweller's workbench" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeJotDv1X5OSKKkgZX-rfah0eSsGse9k0YYbVDUkH3-R5geExSjyZ9dxGyPYq7A45mYIwfBDVlHJAdX_OQR1HBrc2B2Xi2kqwH6ruY7UngFxUvHjhRdWb0A3ZyrilP1nWSIpE5DYzw6_zRwWwe_Hlr0u2RTRFXKqYr0mQl8y2FD7AckyKlhwYorYc_7KejnRK1bcFMo2Zq8h5w6ZmHMstS0yFd1tYSy6s-HEZEFOa9pqbbBz7XPANkYGLjDHbpFYg8lXDMLZcf7VAc"/>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<span class="font-label-sm text-primary mb-6 block tracking-[.3em]">THE ATELIER STORY</span>
+<h2 class="font-display-lg text-4xl md:text-5xl mb-8 leading-tight">Australia's No.1 Custom Jeweller</h2>
+<p class="font-body-lg text-secondary mb-6">
+                        Based in Sydney, Australia, Ajay The Jeweller is defined by an uncompromising dedication to high-end custom metallurgy and luxury diamond setting. Ajay's journey began with a vision to merge raw architectural concepts with high-jewelry diamond mastery.
+                    </p>
+<p class="font-body-lg text-secondary mb-8">
+                        Today, our Sydney atelier serves a global clientele of luxury collectors, hip-hop artists, and couples looking for custom engagement rings. We select only the top 1% of raw diamonds, ensuring that every VVS+ stone is set with mathematical precision to maximize fire and scintillation.
+                    </p>
+<ul class="space-y-6 mb-12">
+<li class="flex items-center gap-6 group cursor-default">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border border-white/10 flex items-center justify-center text-primary group-hover:border-primary/40 group-hover:bg-primary/5 transition-all duration-300">
+<span class="material-symbols-outlined text-sm transition-transform duration-500 group-hover:rotate-45" data-icon="star">star</span>
+</div>
+<span class="font-label-sm uppercase tracking-widest text-on-surface group-hover:text-primary transition-colors duration-300">Sydney Studio &amp; Global Secure Delivery</span>
+</li>
+<li class="flex items-center gap-6 group cursor-default">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border border-white/10 flex items-center justify-center text-primary group-hover:border-primary/40 group-hover:bg-primary/5 transition-all duration-300">
+<span class="material-symbols-outlined text-sm transition-transform duration-500 group-hover:scale-125" data-icon="architecture">architecture</span>
+</div>
+<span class="font-label-sm uppercase tracking-widest text-on-surface group-hover:text-primary transition-colors duration-300">Architectural-Grade 3D CAD Approvals</span>
+</li>
+<li class="flex items-center gap-6 group cursor-default">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border border-white/10 flex items-center justify-center text-primary group-hover:border-primary/40 group-hover:bg-primary/5 transition-all duration-300">
+<span class="material-symbols-outlined text-sm transition-transform duration-500 group-hover:translate-y-[-2px]" data-icon="verified">verified</span>
+</div>
+<span class="font-label-sm uppercase tracking-widest text-on-surface group-hover:text-primary transition-colors duration-300">Lifetime Craftsmanship Guarantee</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- Testimonials & Social Proof Section -->
+<section id="testimonials" class="reveal-hidden py-32 bg-surface border-t border-primary/10 relative overflow-hidden">
+    <div class="absolute left-1/2 bottom-0 w-1/3 h-[300px] bg-primary/5 blur-[120px] pointer-events-none -translate-x-1/2"></div>
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
+            <div class="max-w-xl">
+                <span class="font-label-sm text-primary tracking-[0.3em] mb-4 block uppercase text-[11px]">CLIENT SATISFACTION</span>
+                <h3 class="font-display-lg text-4xl md:text-5xl text-on-surface">The Mark of Trust</h3>
+                <p class="font-body-lg text-secondary mt-6">
+                    Our clients command the extraordinary. Read their verified reactions to their custom design transformations.
+                </p>
+            </div>
+            <!-- Google Review Stat Badge -->
+            <div class="flex items-center gap-6 bg-surface-container-low/60 backdrop-blur-md border border-primary/20 p-6 rounded-xl shadow-[0_10px_35px_rgba(0,0,0,0.4)] relative group overflow-hidden max-w-sm">
+                <div class="absolute -top-12 -right-12 w-24 h-24 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors duration-500"></div>
+                <!-- Gold threads -->
+                <div class="absolute top-0 left-0 w-3 h-[1px] bg-primary"></div>
+                <div class="absolute top-0 left-0 h-3 w-[1px] bg-primary"></div>
+                <div class="absolute bottom-0 right-0 w-3 h-[1px] bg-primary"></div>
+                <div class="absolute bottom-0 right-0 h-3 w-[1px] bg-primary"></div>
+                <div class="flex flex-col">
+                    <span class="font-label-sm uppercase tracking-widest text-[10px] text-primary">GOOGLE RATING</span>
+                    <span class="font-display-lg text-3xl text-on-surface font-semibold mt-1">5.0 / 5.0</span>
+                </div>
+                <div class="flex flex-col gap-1 text-primary relative z-10">
+                    <div class="flex gap-0.5">
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <span class="font-label-sm text-[10px] text-secondary tracking-widest uppercase">Verified Reviews</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-20">
+            <!-- Review 1 -->
+            <div class="p-8 bg-surface-container-low border border-white/5 hover:border-primary/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(0,0,0,0.4)] relative flex flex-col justify-between overflow-hidden group">
+                <span class="absolute right-4 top-2 text-primary/5 font-display-lg text-8xl select-none pointer-events-none group-hover:text-primary/10 transition-colors duration-500 font-serif">“</span>
+                <div>
+                    <div class="flex gap-0.5 text-primary mb-6 relative z-10">
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-body-lg text-on-surface italic text-base leading-relaxed mb-8 relative z-10">
+                        "Trust the process. I came to Ajay with a rough sketch for a custom pendant, and the 3D render was already perfect. The physical piece with VVS diamonds is absolutely unreal. Australia's best, hands down."
+                    </p>
+                </div>
+                <div class="relative z-10">
+                    <span class="font-label-sm uppercase tracking-widest text-primary text-[10px] block mb-1">Marcus T.</span>
+                    <span class="font-label-sm text-[10px] text-secondary tracking-widest uppercase">Sydney, Australia</span>
+                </div>
+            </div>
+            <!-- Review 2 -->
+            <div class="p-8 bg-surface-container-low border border-white/5 hover:border-primary/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(0,0,0,0.4)] relative flex flex-col justify-between overflow-hidden group">
+                <span class="absolute right-4 top-2 text-primary/5 font-display-lg text-8xl select-none pointer-events-none group-hover:text-primary/10 transition-colors duration-500 font-serif">“</span>
+                <div>
+                    <div class="flex gap-0.5 text-primary mb-6 relative z-10">
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-body-lg text-on-surface italic text-base leading-relaxed mb-8 relative z-10">
+                        "Ajay crafted our custom diamond engagement ring. The craftsmanship is world-class and the consultation process made us feel completely at ease. Incredible attention to detail in every single prong."
+                    </p>
+                </div>
+                <div class="relative z-10">
+                    <span class="font-label-sm uppercase tracking-widest text-primary text-[10px] block mb-1">Sarah &amp; James L.</span>
+                    <span class="font-label-sm text-[10px] text-secondary tracking-widest uppercase">Melbourne, VIC</span>
+                </div>
+            </div>
+            <!-- Review 3 -->
+            <div class="p-8 bg-surface-container-low border border-white/5 hover:border-primary/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(0,0,0,0.4)] relative flex flex-col justify-between overflow-hidden group">
+                <span class="absolute right-4 top-2 text-primary/5 font-display-lg text-8xl select-none pointer-events-none group-hover:text-primary/10 transition-colors duration-500 font-serif">“</span>
+                <div>
+                    <div class="flex gap-0.5 text-primary mb-6 relative z-10">
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-body-lg text-on-surface italic text-base leading-relaxed mb-8 relative z-10">
+                        "Worldwide shipping was incredibly fast and secure. The custom baguette-cut diamond band exceeded all my expectations. Will definitely be ordering my next piece here."
+                    </p>
+                </div>
+                <div class="relative z-10">
+                    <span class="font-label-sm uppercase tracking-widest text-primary text-[10px] block mb-1">David K.</span>
+                    <span class="font-label-sm text-[10px] text-secondary tracking-widest uppercase">Los Angeles, USA</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instagram Community Hub -->
+        <div class="border border-white/5 bg-surface-container-low p-12 flex flex-col md:flex-row justify-between items-center gap-12 relative">
+            <div class="absolute -top-1 -left-1 w-4 h-4 border-t border-l border-primary/40"></div>
+            <div class="absolute -top-1 -right-1 w-4 h-4 border-t border-r border-primary/40"></div>
+            <div class="absolute -bottom-1 -left-1 w-4 h-4 border-b border-l border-primary/40"></div>
+            <div class="absolute -bottom-1 -right-1 w-4 h-4 border-b border-r border-primary/40"></div>
+            
+            <div class="max-w-lg text-center md:text-left">
+                <h4 class="font-display-lg text-2xl text-on-surface mb-3 uppercase">Join the Showcase</h4>
+                <p class="font-body-lg text-secondary text-sm">
+                    Watch client transformations, behind-the-scenes metalsmithing, and daily high-jewelry reaction showcases live on our Instagram channel.
+                </p>
+            </div>
+            
+            <!-- Instagram Stats Row -->
+            <div class="flex gap-12 items-center flex-wrap justify-center">
+                <div class="text-center">
+                    <span class="font-display-lg text-3xl text-primary font-bold block">32K+</span>
+                    <span class="font-label-sm text-[10px] text-secondary tracking-widest uppercase mt-1 block">Followers</span>
+                </div>
+                <div class="text-center">
+                    <span class="font-display-lg text-3xl text-on-surface font-semibold block">490+</span>
+                    <span class="font-label-sm text-[10px] text-secondary tracking-widest uppercase mt-1 block">Showcases</span>
+                </div>
+                <a class="bg-primary text-on-primary font-label-sm py-4 px-8 uppercase tracking-widest hover:brightness-110 active:scale-95 transition-luxury flex items-center gap-2" href="https://instagram.com" target="_blank">
+                    Follow @AjayTheJeweller
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VIP Access Section -->
+<section class="reveal-hidden py-40 bg-surface-container-lowest" id="vip">
+<div class="max-w-4xl mx-auto px-margin-mobile text-center mb-20">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg mb-6">VIP Consultation</h2>
+<p class="font-body-lg text-secondary">Access our private atelier for a one-on-one consultation. Whether you are envisioning a unique engagement piece or a custom collection, our specialists are ready to bring your legacy to life.</p>
+</div>
+<div class="max-w-2xl mx-auto px-margin-mobile">
+    <div id="vip-scheduler-container" class="p-8 md:p-12 bg-surface/30 backdrop-blur-md border border-primary-container/30 relative group transition-all duration-500 hover:border-primary hover:shadow-[0_20px_50px_rgba(212,175,55,0.1)]">
+        <!-- Gold-thread corners -->
+        <div class="absolute -top-1 -left-1 w-6 h-6 border-t border-l border-primary group-hover:scale-[1.05] transition-transform duration-500"></div>
+        <div class="absolute -top-1 -right-1 w-6 h-6 border-t border-r border-primary group-hover:scale-[1.05] transition-transform duration-500"></div>
+        <div class="absolute -bottom-1 -left-1 w-6 h-6 border-b border-l border-primary group-hover:scale-[1.05] transition-transform duration-500"></div>
+        <div class="absolute -bottom-1 -right-1 w-6 h-6 border-b border-r border-primary group-hover:scale-[1.05] transition-transform duration-500"></div>
+
+        <!-- Step 1: Selector of Consultation Types -->
+        <div class="scheduler-step animate-[fadeInUp_0.6s_ease]" id="scheduler-step-1">
+            <h4 class="font-title-md text-primary text-sm uppercase tracking-widest mb-6 text-center">1. Select Consultation Type</h4>
+            <div class="space-y-4">
+                <button class="scheduler-type-btn w-full p-5 border border-primary bg-primary/5 rounded-md flex justify-between items-center text-left hover:bg-primary/10 transition-all duration-300" data-type="Virtual CAD Design Session">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-primary text-2xl">laptop_mac</span>
+                        <div class="flex flex-col">
+                            <span class="font-title-md text-on-surface text-xs font-semibold uppercase">Virtual CAD Design Session</span>
+                            <span class="text-[10px] text-secondary">Join a secure live screen video call with Ajay</span>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-primary">chevron_right</span>
+                </button>
+                <button class="scheduler-type-btn w-full p-5 border border-white/10 rounded-md flex justify-between items-center text-left hover:border-primary/55 hover:bg-surface-container-low transition-all duration-300" data-type="Sydney Atelier Showroom">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-primary text-2xl">storefront</span>
+                        <div class="flex flex-col">
+                            <span class="font-title-md text-on-surface text-xs font-semibold uppercase">Sydney Atelier Showroom</span>
+                            <span class="text-[10px] text-secondary">Visit our private gallery in Sydney, Australia</span>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-primary">chevron_right</span>
+                </button>
+                <button class="scheduler-type-btn w-full p-5 border border-white/10 rounded-md flex justify-between items-center text-left hover:border-primary/55 hover:bg-surface-container-low transition-all duration-300" data-type="Private Home Consultation">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-primary text-2xl">home</span>
+                        <div class="flex flex-col">
+                            <span class="font-title-md text-on-surface text-xs font-semibold uppercase">Private Home Consultation</span>
+                            <span class="text-[10px] text-secondary">Ajay and a security detail bring samples to you</span>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-primary">chevron_right</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 2: Monthly Calendar and Slots -->
+        <div class="scheduler-step hidden animate-[fadeInUp_0.6s_ease]" id="scheduler-step-2">
+            <button class="scheduler-back-btn flex items-center gap-1 text-secondary hover:text-primary transition-luxury text-[10px] font-label-sm uppercase tracking-wider mb-6">
+                <span class="material-symbols-outlined text-[14px]">arrow_back</span> Back
+            </button>
+            <h4 class="font-title-md text-primary text-sm uppercase tracking-widest mb-6 text-center" id="scheduler-date-title">2. Select Date &amp; Time</h4>
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                <!-- Mini calendar grid -->
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex justify-between items-center px-2">
+                        <span id="calendar-month-year" class="font-title-md text-xs text-on-surface uppercase tracking-wider font-semibold">June 2026</span>
+                        <div class="flex gap-2">
+                            <button id="calendar-prev-month" class="material-symbols-outlined text-sm text-secondary hover:text-primary transition-luxury">chevron_left</button>
+                            <button id="calendar-next-month" class="material-symbols-outlined text-sm text-secondary hover:text-primary transition-luxury">chevron_right</button>
+                        </div>
+                    </div>
+                    <!-- Calendar days -->
+                    <div class="grid grid-cols-7 gap-1 text-center text-[9px] font-label-sm uppercase tracking-widest text-secondary mb-2">
+                        <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
+                    </div>
+                    <!-- Calendar dates container -->
+                    <div id="calendar-days-grid" class="grid grid-cols-7 gap-1 text-center text-xs font-mono">
+                        <!-- Filled in dynamically -->
+                    </div>
+                </div>
+
+                <!-- Time slots selection -->
+                <div class="md:col-span-5 space-y-4">
+                    <span class="text-[9px] font-label-sm text-primary uppercase tracking-widest block text-center border-b border-white/5 pb-2">Available Slots</span>
+                    <div class="grid grid-cols-2 md:grid-cols-1 gap-2 max-h-[180px] overflow-y-auto pr-1" id="scheduler-slots-container">
+                        <!-- Filled in dynamically based on selected date -->
+                    </div>
+                </div>
+            </div>
+            
+            <button id="scheduler-to-step-3" class="pulse-gold w-full bg-primary-container text-on-primary py-4 font-label-sm uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-luxury mt-8 hidden">
+                Confirm Date &amp; Time
+            </button>
+        </div>
+
+        <!-- Step 3: Contact & Vision Details -->
+        <div class="scheduler-step hidden animate-[fadeInUp_0.6s_ease]" id="scheduler-step-3">
+            <button class="scheduler-back-btn flex items-center gap-1 text-secondary hover:text-primary transition-luxury text-[10px] font-label-sm uppercase tracking-wider mb-6">
+                <span class="material-symbols-outlined text-[14px]">arrow_back</span> Back
+            </button>
+            <h4 class="font-title-md text-primary text-sm uppercase tracking-widest mb-6 text-center">3. Secure Your Slot</h4>
+            
+            <div id="scheduler-form-wrapper" class="space-y-6">
+                <!-- Info Summary -->
+                <div class="bg-surface-container-low border border-white/5 p-4 rounded-md text-xs space-y-2">
+                    <div class="flex justify-between">
+                        <span class="text-secondary uppercase tracking-widest text-[9px]">Consultation</span>
+                        <span id="summary-booking-type" class="text-on-surface font-semibold">Virtual CAD Session</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-secondary uppercase tracking-widest text-[9px]">Selected Date</span>
+                        <span id="summary-booking-date" class="text-on-surface font-semibold font-mono">June 15, 2026</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-secondary uppercase tracking-widest text-[9px]">Selected Time</span>
+                        <span id="summary-booking-time" class="text-on-surface font-semibold font-mono">11:00 AM (AEST)</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-1">
+                        <label class="text-[9px] font-label-sm text-primary uppercase tracking-widest">Full Name</label>
+                        <input type="text" id="scheduler-name" class="bg-transparent border-0 border-b border-white/20 focus:border-primary focus:ring-0 text-on-surface font-body-lg px-0 py-2 transition-luxury" placeholder="ALEXANDER VANCE" required>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <label class="text-[9px] font-label-sm text-primary uppercase tracking-widest">Email Address</label>
+                        <input type="email" id="scheduler-email" class="bg-transparent border-0 border-b border-white/20 focus:border-primary focus:ring-0 text-on-surface font-body-lg px-0 py-2 transition-luxury" placeholder="VIP@DOMAIN.COM" required>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-1">
+                    <label class="text-[9px] font-label-sm text-primary uppercase tracking-widest">Design Vision Inquiries</label>
+                    <textarea id="scheduler-message" rows="2" class="bg-transparent border-0 border-b border-white/20 focus:border-primary focus:ring-0 text-on-surface font-body-lg px-0 py-2 transition-luxury" placeholder="Describe diamond carat preferences, chain styles, or budget details..." required></textarea>
+                </div>
+
+                <button id="scheduler-submit-btn" class="pulse-gold w-full bg-primary-container text-on-primary py-5 font-label-sm uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-luxury">
+                    CONFIRM PRIVATE RESERVATION
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 4: Success & .ics download -->
+        <div class="scheduler-step hidden text-center space-y-6 py-6 animate-[fadeInUp_0.6s_ease]" id="scheduler-step-4">
+            <div class="w-16 h-16 rounded-full bg-primary/15 border border-primary flex items-center justify-center text-primary mx-auto animate-[pulse_2s_infinite]">
+                <span class="material-symbols-outlined text-3xl">verified_user</span>
+            </div>
+            <span class="text-[9px] font-label-sm text-primary uppercase tracking-widest">Reservation Secured</span>
+            <h3 class="font-display-lg text-2xl text-on-surface uppercase mt-2">Consultation Reserved</h3>
+            <p class="text-secondary text-xs max-w-sm mx-auto leading-relaxed">
+                Your private session with Ajay has been locked. A digital confirmation receipt was dispatched to your email address, and our VIP relations concierge will reach out to finalize briefing details.
+            </p>
+
+            <div class="bg-surface-container-low border border-white/5 p-4 rounded-md text-xs space-y-2 text-left max-w-sm mx-auto">
+                <div><span class="text-secondary uppercase tracking-widest text-[9px] block">Details</span> <span id="success-booking-type" class="text-on-surface font-semibold">Virtual CAD Design Session</span></div>
+                <div><span class="text-secondary uppercase tracking-widest text-[9px] block">Reserved Schedule</span> <span id="success-booking-datetime" class="text-on-surface font-semibold font-mono">Mon, June 15, 2026 at 11:00 AM (AEST)</span></div>
+                <div><span class="text-secondary uppercase tracking-widest text-[9px] block">Atelier Phone Helpline</span> <span class="text-on-surface font-semibold font-mono">+61 438 857 300</span></div>
+            </div>
+
+            <div class="flex flex-col gap-3 max-w-sm mx-auto pt-4">
+                <button id="scheduler-download-ics" class="w-full bg-primary text-surface-container-lowest py-3 text-xs font-label-sm uppercase tracking-widest font-semibold hover:brightness-110 transition-luxury flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-sm">calendar_today</span> Add to Calendar (.ics)
+                </button>
+                <button id="scheduler-reset-btn" class="w-full border border-white/10 hover:border-primary text-on-surface py-3 text-xs font-label-sm uppercase tracking-widest transition-luxury">
+                    Done
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest text-primary w-full py-20 border-t border-primary/20 shadow-none">
+<div class="flex flex-col items-center gap-12 px-margin-desktop max-w-container-max mx-auto">
+<h2 class="font-display-lg text-headline-lg text-primary uppercase tracking-[0.2em]">AJAY THE JEWELLER</h2>
+<nav class="flex flex-wrap justify-center gap-x-12 gap-y-6">
+<a class="font-body-lg text-on-surface-variant hover:text-primary hover:tracking-widest transition-luxury cursor-pointer" href="#collection">The Collection</a>
+<a class="font-body-lg text-on-surface-variant hover:text-primary hover:tracking-widest transition-luxury cursor-pointer" href="#process">The Process</a>
+<a class="font-body-lg text-on-surface-variant hover:text-primary hover:tracking-widest transition-luxury cursor-pointer" href="#atelier">The Workshop</a>
+<a class="font-body-lg text-on-surface-variant hover:text-primary hover:tracking-widest transition-luxury cursor-pointer" href="#vip">VIP Consultation</a>
+</nav>
+<div class="flex flex-col items-center gap-6 text-on-surface-variant text-sm font-label-sm tracking-wider">
+    <div class="flex flex-col md:flex-row gap-6 md:gap-12 items-center">
+        <span class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-primary text-lg" data-icon="location_on">location_on</span> Sydney, Australia</span>
+        <a href="tel:+61438857300" class="flex items-center gap-2 hover:text-primary transition-luxury"><span class="material-symbols-outlined text-primary text-lg" data-icon="call">call</span> +61 438 857 300</a>
+        <a href="mailto:concierge@ajaythejeweller.com" class="flex items-center gap-2 hover:text-primary transition-luxury"><span class="material-symbols-outlined text-primary text-lg" data-icon="mail">mail</span> concierge@ajaythejeweller.com</a>
+    </div>
+</div>
+<p class="font-label-sm text-[10px] text-on-surface-variant tracking-[0.2em]">© 2024 AJAY THE JEWELLER. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+
+<!-- Cart Drawer & Overlay -->
+<div id="cart-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity duration-500 opacity-0 pointer-events-none animate-none"></div>
+<div id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-surface border-l border-primary/20 z-50 shadow-2xl transition-transform duration-500 translate-x-full flex flex-col">
+    <!-- Cart Header -->
+    <div class="flex justify-between items-center px-6 py-6 border-b border-primary/10 bg-surface-container-low flex-shrink-0">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-2xl" id="cart-header-icon" data-icon="shopping_bag">shopping_bag</span>
+            <h3 class="font-display-lg text-xl tracking-[0.1em] text-on-surface uppercase" id="cart-header-title">Your Bag</h3>
+        </div>
+        <button id="cart-close-btn" class="material-symbols-outlined text-on-surface hover:text-primary transition-luxury text-2xl cursor-pointer" data-icon="close">close</button>
+    </div>
+    
+    <!-- Cart view: Bag items -->
+    <div id="cart-bag-view" class="flex-1 flex flex-col min-h-0">
+        <!-- Cart Content (Scrollable list of items) -->
+        <div id="cart-items-container" class="flex-1 overflow-y-auto px-6 py-6 space-y-6">
+            <!-- Dynamic list of items added here -->
+        </div>
+        
+        <!-- Cart Footer -->
+        <div class="px-6 py-8 border-t border-primary/10 bg-surface-container-low flex-shrink-0">
+            <div class="flex justify-between items-center mb-4">
+                <span class="font-label-sm uppercase tracking-widest text-secondary text-sm">Subtotal</span>
+                <span id="cart-subtotal" class="font-title-md text-primary text-xl">$0 AUD</span>
+            </div>
+            <p class="font-body-lg text-secondary text-xs leading-relaxed mb-6 italic text-center">
+                Complimentary fully insured worldwide shipping &amp; delivery.
+            </p>
+            <button id="cart-checkout-btn" class="pulse-gold w-full bg-primary-container text-on-primary py-4 font-label-sm uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-luxury">
+                PROCEED TO CHECKOUT
+            </button>
+        </div>
+    </div>
+
+    <!-- Cart view: Checkout Form -->
+    <div id="cart-checkout-view" class="flex-1 flex flex-col min-h-0 hidden">
+        <!-- Scrollable checkout steps -->
+        <div class="flex-1 overflow-y-auto px-6 py-6 space-y-8">
+            <!-- Back button -->
+            <button id="checkout-back-btn" class="flex items-center gap-1 text-secondary hover:text-primary transition-luxury text-xs font-label-sm uppercase tracking-wider mb-2">
+                <span class="material-symbols-outlined text-sm">arrow_back</span> Return to bag
+            </button>
+
+            <!-- Checkout Steps Navigation Indicators -->
+            <div class="flex justify-between items-center border-b border-white/5 pb-4 mb-4 text-[9px] font-label-sm tracking-wider uppercase text-secondary">
+                <span class="checkout-step-indicator active text-primary" data-step="1">1. Delivery</span>
+                <span class="text-white/20">✦</span>
+                <span class="checkout-step-indicator" data-step="2">2. Shipping</span>
+                <span class="text-white/20">✦</span>
+                <span class="checkout-step-indicator" data-step="3">3. Payment</span>
+            </div>
+
+            <!-- Step 1 Pane: Delivery details -->
+            <div class="checkout-pane" id="checkout-pane-1">
+                <h4 class="font-title-md text-on-surface text-sm uppercase tracking-wider mb-6">Delivery Details</h4>
+                <div class="space-y-4">
+                    <div class="flex flex-col gap-1">
+                        <label class="text-[9px] font-label-sm text-primary uppercase tracking-widest">Email Address</label>
+                        <input type="email" id="checkout-email" class="bg-surface-container-low border border-white/10 rounded-md px-3 py-2.5 text-xs text-on-surface focus:border-primary focus:ring-0 placeholder-secondary/35" placeholder="VIP@DOMAIN.COM" required>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <label class="text-[9px] font-label-sm text-primary uppercase tracking-widest">Full Name</label>
+                        <input type="text" id="checkout-name" class="bg-surface-container-low border border-white/10 rounded-md px-3 py-2.5 text-xs text-on-surface focus:border-primary focus:ring-0 placeholder-secondary/35" placeholder="ALEXANDER VANCE" required>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <label class="text-[9px] font-label-sm text-primary uppercase tracking-widest">Delivery Address</label>
+                        <input type="text" id="checkout-address" class="bg-surface-container-low border border-white/10 rounded-md px-3 py-2.5 text-xs text-on-surface focus:border-primary focus:ring-0 placeholder-secondary/35" placeholder="10 ELIZABETH STREET" required>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex flex-col gap-1">
+                            <label class="text-[9px] font-label-sm text-primary uppercase tracking-widest">City</label>
+                            <input type="text" id="checkout-city" class="bg-surface-container-low border border-white/10 rounded-md px-3 py-2.5 text-xs text-on-surface focus:border-primary focus:ring-0 placeholder-secondary/35" placeholder="SYDNEY" required>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label class="text-[9px] font-label-sm text-primary uppercase tracking-widest">Postcode</label>
+                            <input type="text" id="checkout-postcode" class="bg-surface-container-low border border-white/10 rounded-md px-3 py-2.5 text-xs text-on-surface focus:border-primary focus:ring-0 placeholder-secondary/35" placeholder="2000" required>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <label class="text-[9px] font-label-sm text-primary uppercase tracking-widest">Phone Number</label>
+                        <input type="tel" id="checkout-phone" class="bg-surface-container-low border border-white/10 rounded-md px-3 py-2.5 text-xs text-on-surface focus:border-primary focus:ring-0 placeholder-secondary/35" placeholder="+61 400 000 000" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 Pane: Shipping Method -->
+            <div class="checkout-pane hidden" id="checkout-pane-2">
+                <h4 class="font-title-md text-on-surface text-sm uppercase tracking-wider mb-6">Select Shipping Method</h4>
+                <div class="space-y-4">
+                    <label class="flex justify-between items-center p-4 border border-primary bg-primary/5 rounded-md cursor-pointer transition-luxury">
+                        <div class="flex items-center gap-3">
+                            <input type="radio" name="shipping-method" value="express" checked class="text-primary focus:ring-0 border-white/20 bg-surface">
+                            <div class="flex flex-col">
+                                <span class="font-title-md text-on-surface text-xs font-semibold">Atelier Express (Insured)</span>
+                                <span class="text-[10px] text-secondary">Secured transit via express delivery. Dispatch 2-3 weeks.</span>
+                            </div>
+                        </div>
+                        <span class="font-title-md text-primary text-xs font-semibold font-mono">FREE</span>
+                    </label>
+                    <label class="flex justify-between items-center p-4 border border-white/10 hover:border-primary bg-surface rounded-md cursor-pointer transition-luxury">
+                        <div class="flex items-center gap-3">
+                            <input type="radio" name="shipping-method" value="vip-courier" class="text-primary focus:ring-0 border-white/20 bg-surface">
+                            <div class="flex flex-col">
+                                <span class="font-title-md text-on-surface text-xs font-semibold">Private Ferrari Courier Delivery</span>
+                                <span class="text-[10px] text-secondary">Hand-delivered white glove courier. Sydney metro only.</span>
+                            </div>
+                        </div>
+                        <span class="font-title-md text-primary text-xs font-semibold font-mono">+$250 AUD</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Step 3 Pane: Payment -->
+            <div class="checkout-pane hidden" id="checkout-pane-3">
+                <h4 class="font-title-md text-on-surface text-sm uppercase tracking-wider mb-4">Secure Payment</h4>
+                
+                <!-- Credit Card Visual Container -->
+                <div class="relative w-full h-44 rounded-xl border border-primary/20 bg-gradient-to-br from-surface-container-high via-surface-container-low to-black p-6 shadow-2xl flex flex-col justify-between overflow-hidden mb-6 group">
+                    <div class="absolute -right-8 -top-8 w-24 h-24 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-all"></div>
+                    <!-- Card brand logo indicator -->
+                    <div class="flex justify-between items-start">
+                        <div class="w-10 h-7 bg-white/10 rounded flex items-center justify-center text-[8px] tracking-widest text-primary uppercase font-bold">CHIP</div>
+                        <span id="cc-brand-logo" class="font-display-lg text-lg text-primary tracking-widest italic font-bold">SECURE</span>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <div id="cc-card-number-preview" class="font-display-lg text-base text-on-surface tracking-[0.15em] font-medium font-mono">•••• •••• •••• ••••</div>
+                        <div class="flex justify-between items-end">
+                            <div class="flex flex-col gap-0.5">
+                                <span class="text-[7px] text-primary uppercase tracking-widest">Card Holder</span>
+                                <div id="cc-card-holder-preview" class="font-label-sm text-[9px] text-on-surface uppercase truncate max-w-[150px]">ALEXANDER VANCE</div>
+                            </div>
+                            <div class="flex flex-col gap-0.5 items-end">
+                                <span class="text-[7px] text-primary uppercase tracking-widest">Expires</span>
+                                <div id="cc-card-expiry-preview" class="font-label-sm text-[9px] text-on-surface font-mono">MM/YY</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex flex-col gap-1">
+                        <label class="text-[9px] font-label-sm text-primary uppercase tracking-widest">Cardholder Name</label>
+                        <input type="text" id="cc-name" class="bg-surface-container-low border border-white/10 rounded-md px-3 py-2.5 text-xs text-on-surface focus:border-primary focus:ring-0 placeholder-secondary/35" placeholder="ALEXANDER VANCE" required>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <label class="text-[9px] font-label-sm text-primary uppercase tracking-widest">Card Number</label>
+                        <div class="relative">
+                            <input type="text" id="cc-number" maxlength="19" class="bg-surface-container-low border border-white/10 rounded-md pl-3 pr-10 py-2.5 text-xs text-on-surface focus:border-primary focus:ring-0 placeholder-secondary/35 font-mono" placeholder="4000 1234 5678 9010" required>
+                            <span id="cc-input-brand-icon" class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-secondary text-lg">credit_card</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex flex-col gap-1">
+                            <label class="text-[9px] font-label-sm text-primary uppercase tracking-widest">Expiry Date</label>
+                            <input type="text" id="cc-expiry" maxlength="5" class="bg-surface-container-low border border-white/10 rounded-md px-3 py-2.5 text-xs text-on-surface focus:border-primary focus:ring-0 placeholder-secondary/35 font-mono" placeholder="MM/YY" required>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label class="text-[9px] font-label-sm text-primary uppercase tracking-widest">CVV / Security Code</label>
+                            <input type="password" id="cc-cvv" maxlength="4" class="bg-surface-container-low border border-white/10 rounded-md px-3 py-2.5 text-xs text-on-surface focus:border-primary focus:ring-0 placeholder-secondary/35 font-mono" placeholder="•••" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Checkout Footer (Controls next step buttons) -->
+        <div class="px-6 py-8 border-t border-primary/10 bg-surface-container-low flex-shrink-0">
+            <div class="flex justify-between items-center mb-4 text-xs font-label-sm uppercase tracking-widest">
+                <span class="text-secondary">Order Total</span>
+                <span id="checkout-total" class="font-title-md text-primary text-xl font-semibold">$0 AUD</span>
+            </div>
+            <button id="checkout-next-btn" class="pulse-gold w-full bg-primary-container text-on-primary py-4 font-label-sm uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-luxury">
+                CONTINUE TO SHIPPING
+            </button>
+        </div>
+    </div>
+
+    <!-- Cart view: Live Order Tracker / Success screen -->
+    <div id="cart-tracker-view" class="flex-1 flex flex-col min-h-0 hidden">
+        <div class="flex-1 overflow-y-auto px-6 py-6 flex flex-col justify-between">
+            <div class="space-y-6">
+                <!-- Success icon -->
+                <div class="flex flex-col items-center text-center py-4">
+                    <div class="w-14 h-14 rounded-full bg-primary/15 border border-primary flex items-center justify-center text-primary mb-3 animate-[pulse_2s_infinite]">
+                        <span class="material-symbols-outlined text-2xl">verified</span>
+                    </div>
+                    <span class="text-[9px] font-label-sm text-primary uppercase tracking-widest">Order Confirmed</span>
+                    <h3 class="font-display-lg text-xl text-on-surface uppercase mt-1">Masterpiece Queued</h3>
+                    <p class="text-secondary text-[11px] mt-1 italic">
+                        Receipt #<span id="tracker-receipt-id" class="text-on-surface font-semibold font-mono">AJ-10294</span>
+                    </p>
+                </div>
+
+                <!-- Progress Tracker Bar -->
+                <div class="border border-white/5 bg-surface-container-low p-5 rounded-lg space-y-4">
+                    <span class="text-[9px] font-label-sm text-primary uppercase tracking-widest block border-b border-white/5 pb-2">Crafting Progress</span>
+                    
+                    <div class="space-y-5 relative pl-8">
+                        <!-- Connecting Line vertical -->
+                        <div class="absolute left-[5px] top-[10px] bottom-[10px] w-[2px] bg-white/10 z-0" id="tracker-line"></div>
+                        
+                        <!-- Track Node 1 -->
+                        <div class="flex gap-4 relative z-10" id="track-node-1">
+                            <div class="absolute left-[-26px] top-[4px] w-[12px] h-[12px] rounded-full bg-primary border border-primary z-20 transition-all duration-500"></div>
+                            <div class="flex flex-col">
+                                <span class="text-xs font-title-md uppercase tracking-wider text-on-surface font-semibold">1. Design &amp; CAD Approval</span>
+                                <span class="text-[10px] text-secondary">Photorealistic rendering &amp; blueprint sign-off</span>
+                            </div>
+                        </div>
+
+                        <!-- Track Node 2 -->
+                        <div class="flex gap-4 relative z-10" id="track-node-2">
+                            <div class="absolute left-[-26px] top-[4px] w-[12px] h-[12px] rounded-full bg-surface-container-highest border border-white/20 z-20 transition-all duration-500"></div>
+                            <div class="flex flex-col">
+                                <span class="text-xs font-title-md uppercase tracking-wider text-secondary">2. Casting &amp; Metallurgy</span>
+                                <span class="text-[10px] text-secondary/40">Melting and shaping your selected gold alloys</span>
+                            </div>
+                        </div>
+
+                        <!-- Track Node 3 -->
+                        <div class="flex gap-4 relative z-10" id="track-node-3">
+                            <div class="absolute left-[-26px] top-[4px] w-[12px] h-[12px] rounded-full bg-surface-container-highest border border-white/20 z-20 transition-all duration-500"></div>
+                            <div class="flex flex-col">
+                                <span class="text-xs font-title-md uppercase tracking-wider text-secondary">3. Gem Setting</span>
+                                <span class="text-[10px] text-secondary/40">Microscope-precision hand-setting of VVS+ diamonds</span>
+                            </div>
+                        </div>
+
+                        <!-- Track Node 4 -->
+                        <div class="flex gap-4 relative z-10" id="track-node-4">
+                            <div class="absolute left-[-26px] top-[4px] w-[12px] h-[12px] rounded-full bg-surface-container-highest border border-white/20 z-20 transition-all duration-500"></div>
+                            <div class="flex flex-col">
+                                <span class="text-xs font-title-md uppercase tracking-wider text-secondary">4. Quality Audit</span>
+                                <span class="text-[10px] text-secondary/40">Multi-point gemological inspection and audit</span>
+                            </div>
+                        </div>
+
+                        <!-- Track Node 5 -->
+                        <div class="flex gap-4 relative z-10" id="track-node-5">
+                            <div class="absolute left-[-26px] top-[4px] w-[12px] h-[12px] rounded-full bg-surface-container-highest border border-white/20 z-20 transition-all duration-500"></div>
+                            <div class="flex flex-col">
+                                <span class="text-xs font-title-md uppercase tracking-wider text-secondary">5. Secure Transit</span>
+                                <span class="text-[10px] text-secondary/40">Insured express delivery with signature confirmation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-3 pt-4 border-t border-white/5 mt-4 flex gap-2">
+                <button id="tracker-simulate-btn" class="w-1/2 bg-primary/10 border border-primary/40 text-primary py-4 font-label-sm uppercase tracking-widest hover:bg-primary/20 transition-luxury">
+                    ADVANCE STAGE
+                </button>
+                <button id="tracker-close-btn" class="w-1/2 bg-surface-container-high border border-white/10 hover:border-primary/30 text-on-surface py-4 font-label-sm uppercase tracking-widest transition-luxury">
+                    CLOSE PANEL
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Product Details Modal -->
+<div id="product-modal-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 transition-opacity duration-500 opacity-0 pointer-events-none flex items-center justify-center p-4">
+    <div id="product-modal-content" class="bg-surface border border-primary/20 max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-xl shadow-2xl relative transition-all duration-500 translate-y-8 opacity-0 flex flex-col md:flex-row">
+        <!-- Close Button -->
+        <button id="product-modal-close" class="absolute top-6 right-6 text-on-surface hover:text-primary transition-luxury z-30 material-symbols-outlined text-2xl">close</button>
+        
+        <!-- Left Column: Product Gallery -->
+        <div class="w-full md:w-1/2 p-8 flex flex-col justify-between border-b md:border-b-0 md:border-r border-white/5 bg-surface-container-lowest">
+            <div class="relative w-full aspect-square bg-surface-container-low border border-white/5 overflow-hidden group">
+                <img id="modal-product-img" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="" alt="Product Detail View"/>
+            </div>
+            <!-- Dynamic Thumbnails Selection -->
+            <div class="flex gap-4 mt-6 justify-center">
+                <button class="modal-thumb-btn active w-16 h-16 border border-primary overflow-hidden transition-all duration-300" data-index="0">
+                    <img id="modal-product-thumb-0" class="w-full h-full object-cover" src="" alt="Thumb 1"/>
+                </button>
+                <button class="modal-thumb-btn w-16 h-16 border border-white/5 overflow-hidden transition-all duration-300" data-index="1">
+                    <img id="modal-product-thumb-1" class="w-full h-full object-cover" src="" alt="Thumb 2"/>
+                </button>
+                <button class="modal-thumb-btn w-16 h-16 border border-white/5 overflow-hidden transition-all duration-300" data-index="2">
+                    <img id="modal-product-thumb-2" class="w-full h-full object-cover" src="" alt="Thumb 3"/>
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Column: Product Config & Details -->
+        <div class="w-full md:w-1/2 p-8 flex flex-col justify-between">
+            <div>
+                <span id="modal-product-category" class="font-label-sm text-[9px] text-primary tracking-widest uppercase block mb-3">BESPOKE COLLECTION</span>
+                <h3 id="modal-product-title" class="font-display-lg text-2xl text-on-surface mb-2 uppercase">The Aurelian Link</h3>
+                <div class="flex items-baseline gap-2 mb-6">
+                    <span id="modal-product-price" class="font-title-md text-primary text-xl font-semibold">$42,500 AUD</span>
+                    <span id="modal-product-base-note" class="text-secondary text-[10px] uppercase tracking-wider">(Base Config)</span>
+                </div>
+                
+                <p id="modal-product-desc" class="font-body-lg text-secondary text-xs leading-relaxed mb-6">
+                    A masterfully crafted piece sculpted in our Sydney workshop. Features premium, hand-selected VVS+ diamonds of exceptional clarity.
+                </p>
+
+                <!-- Configuration Options -->
+                <div class="space-y-6">
+                    <!-- Metal Selector -->
+                    <div>
+                        <label class="font-label-sm text-primary uppercase text-[8px] block mb-3 tracking-widest">Base Metal Type</label>
+                        <div class="grid grid-cols-4 gap-2">
+                            <button class="metal-select-btn active border border-primary text-primary px-1.5 py-2 text-[9px] uppercase font-semibold tracking-wider bg-primary/5 hover:bg-primary/10 transition-all duration-300" data-metal="18k Yellow Gold" data-price-add="0">18k Yellow</button>
+                            <button class="metal-select-btn border border-white/10 text-secondary px-1.5 py-2 text-[9px] uppercase font-semibold tracking-wider hover:border-primary/40 hover:text-primary transition-all duration-300" data-metal="18k White Gold" data-price-add="500">18k White</button>
+                            <button class="metal-select-btn border border-white/10 text-secondary px-1.5 py-2 text-[9px] uppercase font-semibold tracking-wider hover:border-primary/40 hover:text-primary transition-all duration-300" data-metal="18k Rose Gold" data-price-add="300">18k Rose</button>
+                            <button class="metal-select-btn border border-white/10 text-secondary px-1.5 py-2 text-[9px] uppercase font-semibold tracking-wider hover:border-primary/40 hover:text-primary transition-all duration-300" data-metal="Platinum" data-price-add="2200">Platinum</button>
+                        </div>
+                    </div>
+
+                    <!-- Size Selector -->
+                    <div>
+                        <label id="modal-size-label" class="font-label-sm text-primary uppercase text-[8px] block mb-3 tracking-widest">Select Fit Size</label>
+                        <div class="relative">
+                            <select id="modal-size-select" class="w-full bg-surface-container-low border border-white/10 rounded-md px-3 py-2.5 pr-10 text-xs focus:border-primary focus:ring-0 text-on-surface appearance-none cursor-pointer">
+                                <!-- Options will populate dynamically -->
+                            </select>
+                            <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-primary pointer-events-none text-base">expand_more</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Tabs -->
+                <div class="border-t border-white/5 pt-5 mt-6">
+                    <div class="flex border-b border-white/5 pb-1 mb-3 gap-6">
+                        <button class="tab-btn active text-primary border-b border-primary pb-1 font-label-sm text-[9px] uppercase tracking-wider" data-tab="details">Details</button>
+                        <button class="tab-btn text-secondary pb-1 font-label-sm text-[9px] uppercase tracking-wider" data-tab="gems">Diamond Specs</button>
+                        <button class="tab-btn text-secondary pb-1 font-label-sm text-[9px] uppercase tracking-wider" data-tab="delivery">Atelier Shipping</button>
+                    </div>
+                    <div class="tab-content text-xs text-secondary leading-relaxed" id="tab-details-content">
+                        Handcrafted in our Sydney workshop. Every link is custom cast and individually inspected for exact tolerances and maximum comfort.
+                    </div>
+                    <div class="tab-content text-xs text-secondary leading-relaxed hidden" id="tab-gems-content">
+                        Stone Clarity: VVS+ Clarity | Color: D-F Colorless | Cut: Ideal Hearts &amp; Arrows Brilliant Cut. Full certificate included with purchase.
+                    </div>
+                    <div class="tab-content text-xs text-secondary leading-relaxed hidden" id="tab-delivery-content">
+                        Includes fully-insured complimentary express courier delivery in signature wood box case. Crafting time: 2-3 weeks.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer: Add to Bag -->
+            <div class="border-t border-white/5 pt-5 mt-6">
+                <button id="modal-add-to-bag" class="pulse-gold w-full bg-primary-container text-on-primary py-4 font-label-sm uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-luxury flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-sm">shopping_bag</span>
+                    ADD TO SHOPPING BAG
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Active Order Tracking Floating Badge -->
+<button id="active-order-badge" class="fixed bottom-6 left-6 z-40 bg-surface/90 backdrop-blur-md border border-primary/40 px-5 py-3 rounded-full text-xs font-label-sm tracking-widest text-primary uppercase shadow-xl hover:bg-primary hover:text-surface-container-lowest transition-all duration-300 hidden flex items-center gap-2">
+    <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+    </span>
+    ✦ Track Active Order
+</button>
+
+<style>
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    #cart-drawer.cart-drawer-open {
+        transform: translateX(0);
+    }
+    #cart-overlay.cart-overlay-active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+</style>
+<script>
+    console.log("Main script tag executed.");
+    const formatCurrency = a => '$' + a.toLocaleString('en-US') + ' AUD';
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    
+    // Observer
+    const obs = new IntersectionObserver(es => es.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('reveal-visible'); obs.unobserve(e.target); }
+    }), { threshold: 0.15 });
+    document.querySelectorAll('.reveal-hidden').forEach(s => obs.observe(s));
+
+    // View All button and expanded collection toggle is no longer needed as all 9 items are visible by default.
+
+    // Hero Canvas Image Sequence
+    const canvas = document.getElementById('hero-canvas'), scrollContainer = document.getElementById('hero-scroll-container');
+    const textContainer = document.getElementById('hero-text-container'), scrollIndicator = document.getElementById('hero-scroll-indicator');
+    const fallbackImage = document.getElementById('hero-fallback-image');
+
+    if (canvas && canvas.getContext) {
+        const ctx = canvas.getContext('2d'), frames = [], count = 30;
+        let loaded = 0, successCount = 0, target = 0, current = 0, last = -1;
+
+        function drawProp(c, img, w, h) {
+            const r = Math.max(w / img.width, h / img.height);
+            const nw = img.width * r;
+            const nh = img.height * r;
+            c.drawImage(img, (w - nw) / 2, (h - nh) / 2, nw, nh);
+        }
+
+        const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; draw(); };
+        
+        const draw = () => {
+            const img = frames[Math.round(current)] || frames[0];
+            if (img && img.complete) {
+                try {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    drawProp(ctx, img, canvas.width, canvas.height);
+                } catch (e) {
+                    console.error("Frame draw error:", e);
+                }
+            }
+        };
+        
+        window.addEventListener('resize', resize);
+        window.addEventListener('scroll', () => {
+            if (!scrollContainer) return;
+            const rect = scrollContainer.getBoundingClientRect();
+            const prog = Math.max(0, Math.min(1, -rect.top / (scrollContainer.scrollHeight - window.innerHeight)));
+            target = prog * (count - 1);
+            if (textContainer) {
+                textContainer.style.opacity = Math.max(0, 1 - prog * 2.2);
+                textContainer.style.transform = `translateY(${-prog * 80}px)`;
+                textContainer.style.pointerEvents = prog >= 0.45 ? 'none' : 'auto';
+            }
+            if (scrollIndicator) {
+                scrollIndicator.style.opacity = Math.max(0, 1 - prog * 8);
+                scrollIndicator.style.pointerEvents = prog >= 0.12 ? 'none' : 'auto';
+            }
+        }, { passive: true });
+
+        // Preload frames
+        for (let i = 1; i <= count; i++) {
+            const img = new Image();
+            img.onload = () => {
+                successCount++;
+                if (++loaded === count) startAnimation();
+            };
+            img.onerror = () => {
+                if (++loaded === count) startAnimation();
+            };
+            img.src = `./ezgif-frame-${String(i).padStart(3, '0')}.jpg`;
+            frames.push(img);
+        }
+
+        function startAnimation() {
+            if (successCount === 0) {
+                if (fallbackImage) fallbackImage.classList.remove('hidden');
+                if (canvas) canvas.classList.add('hidden');
+            } else {
+                resize();
+                requestAnimationFrame(tick);
+            }
+        }
+        
+        function tick() {
+            current += (target - current) * 0.12;
+            const rnd = Math.round(current);
+            if (rnd !== last) { draw(); last = rnd; }
+            requestAnimationFrame(tick);
+        }
+    } else {
+        if (fallbackImage) fallbackImage.classList.remove('hidden');
+    }
+
+    // Mouse Move Parallax
+    document.addEventListener('mousemove', e => {
+        const c = document.getElementById('hero-canvas');
+        if (c) c.style.transform = `scale(1.05) translate(${(e.clientX - window.innerWidth/2)*0.01}px, ${(e.clientY - window.innerHeight/2)*0.01}px)`;
+    });
+
+    // Header transparent scroll
+    window.addEventListener('scroll', () => {
+        const h = document.querySelector('header');
+        if (h) {
+            h.classList.toggle('bg-surface/80', window.scrollY > 50);
+            h.classList.toggle('py-4', window.scrollY > 50);
+            h.classList.toggle('py-6', window.scrollY <= 50);
+        }
+    });
+
+    // --- Product List DOM Parser & Search/Filter/Sort Hub ---
+    const products = [];
+    
+    function getSizesForCategory(cat) {
+        if (cat === 'rings' || cat === 'bands') {
+            return ['Size 6 (16.5mm)', 'Size 7 (17.3mm)', 'Size 8 (18.1mm)', 'Size 9 (18.9mm)', 'Size 10 (19.8mm)'];
+        } else if (cat === 'chains' || cat === 'necklaces' || cat === 'chokers') {
+            return ['16 Inches (40cm)', '18 Inches (45cm)', '20 Inches (50cm)', '22 Inches (55cm)', '24 Inches (60cm)'];
+        } else if (cat === 'watches') {
+            return ['36mm case', '40mm case', '41mm case', '42mm case'];
+        } else if (cat === 'bracelets') {
+            return ['7 Inches (18cm)', '7.5 Inches (19cm)', '8 Inches (20cm)'];
+        }
+        return ['Standard Fit'];
+    }
+
+    document.querySelectorAll('[data-product]').forEach(el => {
+        const d = el.dataset;
+        if (d.id && !products.some(p => p.id === d.id)) {
+            products.push({
+                id: d.id,
+                title: d.title,
+                price: parseFloat(d.price),
+                category: d.category,
+                img: d.img,
+                featured: d.featured === 'true',
+                description: el.querySelector('p')?.textContent || `A masterfully crafted high-jewelry ${d.category} piece, sculpted in our Sydney workshop. Features premium hand-selected VVS+ diamonds.`,
+                sizes: getSizesForCategory(d.category)
+            });
+        }
+    });
+
+    const searchInput = document.getElementById('collection-search');
+    const sortSelect = document.getElementById('collection-sort');
+    const filterPills = document.querySelectorAll('.filter-pill');
+    const filteredGridContainer = document.getElementById('filtered-grid-container');
+    const originalBentoGrid = document.getElementById('original-bento-grid');
+
+    let activeCategory = 'all';
+    let searchQuery = '';
+    let activeSort = 'featured';
+
+    function applyFilters() {
+        let filtered = products.filter(p => {
+            const matchCat = (activeCategory === 'all' || p.category === activeCategory);
+            const matchSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                p.category.toLowerCase().includes(searchQuery.toLowerCase());
+            return matchCat && matchSearch;
+        });
+
+        if (activeSort === 'price-asc') {
+            filtered.sort((a, b) => a.price - b.price);
+        } else if (activeSort === 'price-desc') {
+            filtered.sort((a, b) => b.price - a.price);
+        } else {
+            filtered.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+        }
+
+        renderFilteredGrid(filtered);
+    }
+
+    function renderFilteredGrid(items) {
+        if (!filteredGridContainer || !originalBentoGrid) return;
+        
+        if (activeCategory === 'all' && !searchQuery && activeSort === 'featured') {
+            filteredGridContainer.classList.add('hidden');
+            originalBentoGrid.classList.remove('hidden');
+            return;
+        }
+
+        originalBentoGrid.classList.add('hidden');
+        filteredGridContainer.classList.remove('hidden');
+        
+        filteredGridContainer.replaceChildren(); // Safe clearing
+        
+        if (items.length === 0) {
+            const empty = document.createElement('div');
+            empty.className = 'col-span-full py-16 text-center text-secondary';
+            empty.textContent = 'No matching jewelry pieces found.';
+            filteredGridContainer.appendChild(empty);
+            return;
+        }
+
+        items.forEach(p => {
+            const card = document.createElement('div');
+            card.className = 'group relative overflow-hidden h-[450px] border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(212,175,55,0.12)] bg-surface/20 cursor-pointer';
+            card.setAttribute('data-product', '');
+            card.setAttribute('data-id', p.id);
+            card.addEventListener('click', (e) => {
+                if (e.target.closest('.add-to-bag-btn')) return;
+                openProductModal(p.id);
+            });
+            
+            const label = document.createElement('div');
+            label.className = 'absolute top-6 left-6 z-20 bg-surface/60 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full font-label-sm text-[9px] tracking-widest text-primary uppercase shadow-lg group-hover:border-primary/40 transition-luxury duration-500';
+            label.textContent = p.category;
+            card.appendChild(label);
+
+            const img = document.createElement('img');
+            img.className = 'w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105';
+            img.alt = p.title;
+            img.src = p.img;
+            card.appendChild(img);
+
+            const overlay = document.createElement('div');
+            overlay.className = 'absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-luxury duration-700';
+            card.appendChild(overlay);
+
+            const content = document.createElement('div');
+            content.className = 'absolute bottom-8 left-8 right-8 transform translate-y-4 group-hover:translate-y-0 transition-luxury duration-700';
+            
+            const titleRow = document.createElement('div');
+            titleRow.className = 'flex justify-between items-baseline mb-4 gap-2';
+            const title = document.createElement('h4');
+            title.className = 'font-title-md text-on-surface text-xl';
+            title.textContent = p.title;
+            const price = document.createElement('span');
+            price.className = 'font-title-md text-primary text-[15px] font-medium';
+            price.textContent = formatCurrency(p.price);
+            titleRow.appendChild(title);
+            titleRow.appendChild(price);
+            content.appendChild(titleRow);
+
+            const btnRow = document.createElement('div');
+            btnRow.className = 'flex gap-4';
+            
+            const exploreBtn = document.createElement('button');
+            exploreBtn.className = 'explore-btn font-label-sm text-on-surface border-b border-on-surface hover:text-primary hover:border-primary transition-luxury';
+            exploreBtn.textContent = 'EXPLORE PIECE';
+            exploreBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openProductModal(p.id);
+            });
+            
+            const addBtn = document.createElement('button');
+            addBtn.className = 'add-to-bag-btn font-label-sm text-primary border border-primary/30 px-3 py-1.5 hover:bg-primary hover:text-on-primary transition-luxury text-[11px]';
+            addBtn.textContent = 'ADD TO BAG';
+            addBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                addToBagDirect(p);
+            });
+
+            btnRow.appendChild(exploreBtn);
+            btnRow.appendChild(addBtn);
+            content.appendChild(btnRow);
+            
+            card.appendChild(content);
+            filteredGridContainer.appendChild(card);
+        });
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            applyFilters();
+        });
+    }
+    if (sortSelect) {
+        sortSelect.addEventListener('change', (e) => {
+            activeSort = e.target.value;
+            applyFilters();
+        });
+    }
+    filterPills.forEach(pill => {
+        pill.addEventListener('click', (e) => {
+            filterPills.forEach(p => {
+                p.classList.remove('active', 'border-primary', 'text-primary', 'bg-primary/10');
+                p.classList.add('border-white/5', 'text-secondary', 'bg-surface/40');
+            });
+            pill.classList.remove('border-white/5', 'text-secondary', 'bg-surface/40');
+            pill.classList.add('active', 'border-primary', 'text-primary', 'bg-primary/10');
+            
+            activeCategory = pill.dataset.category;
+            applyFilters();
+        });
+    });
+
+    // Helper direct add from grid
+    function addToBagDirect(p) {
+        const cartItem = {
+            id: p.id,
+            title: p.title,
+            price: p.price,
+            image: p.img,
+            quantity: 1
+        };
+        const exist = cart.find(i => i.id === cartItem.id);
+        if (exist) exist.quantity++;
+        else cart.push(cartItem);
+        saveCart();
+        openCart();
+    }
+
+    // --- Product Explorer Modal Wiring ---
+    const modalOverlay = document.getElementById('product-modal-overlay');
+    const modalContent = document.getElementById('product-modal-content');
+    const modalClose = document.getElementById('product-modal-close');
+    const modalTitle = document.getElementById('modal-product-title');
+    const modalPrice = document.getElementById('modal-product-price');
+    const modalCategory = document.getElementById('modal-product-category');
+    const modalDesc = document.getElementById('modal-product-desc');
+    const modalImg = document.getElementById('modal-product-img');
+    const modalSizeSelect = document.getElementById('modal-size-select');
+    const modalAddToBag = document.getElementById('modal-add-to-bag');
+    const metalSelectBtns = document.querySelectorAll('.metal-select-btn');
+
+    let activeProduct = null;
+    let activeProductMetal = '18k Yellow Gold';
+    let activeProductMetalPrice = 0;
+
+    function openProductModal(id) {
+        const p = products.find(prod => prod.id === id);
+        if (!p) return;
+        activeProduct = p;
+        activeProductMetal = '18k Yellow Gold';
+        activeProductMetalPrice = 0;
+
+        if (modalTitle) modalTitle.textContent = p.title;
+        if (modalCategory) modalCategory.textContent = p.category.toUpperCase();
+        if (modalDesc) modalDesc.textContent = p.description;
+        if (modalImg) modalImg.src = p.img;
+        
+        for (let i = 0; i < 3; i++) {
+            const thumbImg = document.getElementById(`modal-product-thumb-${i}`);
+            if (thumbImg) thumbImg.src = p.img;
+        }
+
+        if (modalSizeSelect) {
+            modalSizeSelect.replaceChildren();
+            p.sizes.forEach(size => {
+                const opt = document.createElement('option');
+                opt.value = size;
+                opt.textContent = size;
+                modalSizeSelect.appendChild(opt);
+            });
+        }
+
+        metalSelectBtns.forEach(btn => {
+            btn.classList.remove('active', 'border-primary', 'text-primary', 'bg-primary/5');
+            btn.classList.add('border-white/10', 'text-secondary');
+            if (btn.dataset.metal === '18k Yellow Gold') {
+                btn.classList.add('active', 'border-primary', 'text-primary', 'bg-primary/5');
+                btn.classList.remove('border-white/10', 'text-secondary');
+            }
+        });
+
+        updateModalPrice();
+
+        if (modalOverlay) {
+            modalOverlay.classList.remove('pointer-events-none');
+            modalOverlay.style.opacity = '1';
+        }
+        if (modalContent) {
+            modalContent.style.transform = 'translateY(0)';
+            modalContent.style.opacity = '1';
+        }
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeProductModal() {
+        if (modalOverlay) {
+            modalOverlay.classList.add('pointer-events-none');
+            modalOverlay.style.opacity = '0';
+        }
+        if (modalContent) {
+            modalContent.style.transform = 'translateY(2rem)';
+            modalContent.style.opacity = '0';
+        }
+        document.body.style.overflow = '';
+    }
+
+    if (modalClose) modalClose.addEventListener('click', closeProductModal);
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) closeProductModal();
+        });
+    }
+
+    function updateModalPrice() {
+        if (!activeProduct || !modalPrice) return;
+        const total = activeProduct.price + activeProductMetalPrice;
+        modalPrice.textContent = formatCurrency(total);
+    }
+
+    metalSelectBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            metalSelectBtns.forEach(b => {
+                b.classList.remove('active', 'border-primary', 'text-primary', 'bg-primary/5');
+                b.classList.add('border-white/10', 'text-secondary');
+            });
+            btn.classList.remove('border-white/10', 'text-secondary');
+            btn.classList.add('active', 'border-primary', 'text-primary', 'bg-primary/5');
+
+            activeProductMetal = btn.dataset.metal;
+            activeProductMetalPrice = parseFloat(btn.dataset.priceAdd) || 0;
+            updateModalPrice();
+        });
+    });
+
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => {
+                b.classList.remove('active', 'text-primary', 'border-b', 'border-primary');
+                b.classList.add('text-secondary');
+                const tabId = b.dataset.tab;
+                const content = document.getElementById(`tab-${tabId}-content`);
+                if (content) content.classList.add('hidden');
+            });
+            btn.classList.add('active', 'text-primary', 'border-b', 'border-primary');
+            btn.classList.remove('text-secondary');
+            const activeTabId = btn.dataset.tab;
+            const activeContent = document.getElementById(`tab-${activeTabId}-content`);
+            if (activeContent) activeContent.classList.remove('hidden');
+        });
+    });
+
+    if (modalAddToBag) {
+        modalAddToBag.addEventListener('click', () => {
+            if (!activeProduct) return;
+            const sizeVal = modalSizeSelect ? modalSizeSelect.value : 'Standard Fit';
+            const finalPrice = activeProduct.price + activeProductMetalPrice;
+            
+            const cartItem = {
+                id: `${activeProduct.id}-${activeProductMetal}-${sizeVal.replace(/\s+/g, '')}`,
+                title: `${activeProduct.title} (${activeProductMetal} - ${sizeVal})`,
+                price: finalPrice,
+                image: activeProduct.img,
+                quantity: 1
+            };
+
+            const exist = cart.find(i => i.id === cartItem.id);
+            if (exist) exist.quantity++;
+            else cart.push(cartItem);
+
+            saveCart();
+            closeProductModal();
+            openCart();
+        });
+    }
+
+    function setupExploreButtons() {
+        document.querySelectorAll('[data-product]').forEach(card => {
+            card.addEventListener('click', (e) => {
+                if (e.target.closest('.add-to-bag-btn')) return;
+                const id = card.dataset.id;
+                openProductModal(id);
+            });
+        });
+        document.querySelectorAll('.explore-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const id = btn.dataset.id;
+                openProductModal(id);
+            });
+        });
+    }
+
+    // --- Cart & Checkout Stepper Logic ---
+    let cart = JSON.parse(localStorage.getItem('ajay_cart')) || [];
+    const cartBtn = document.getElementById('cart-btn'), cartOverlay = document.getElementById('cart-overlay'), cartDrawer = document.getElementById('cart-drawer');
+    const cartCloseBtn = document.getElementById('cart-close-btn'), cartItems = document.getElementById('cart-items-container'), cartSub = document.getElementById('cart-subtotal'), cartCnt = document.getElementById('cart-count');
+    
+    const openCart = () => { cartDrawer?.classList.add('cart-drawer-open'); cartOverlay?.classList.add('cart-overlay-active'); document.body.style.overflow = 'hidden'; };
+    const closeCart = () => { cartDrawer?.classList.remove('cart-drawer-open'); cartOverlay?.classList.remove('cart-overlay-active'); document.body.style.overflow = ''; };
+    
+    if (cartBtn) cartBtn.addEventListener('click', openCart);
+    if (cartOverlay) cartOverlay.addEventListener('click', closeCart);
+    if (cartCloseBtn) cartCloseBtn.addEventListener('click', closeCart);
+
+    function saveCart() { localStorage.setItem('ajay_cart', JSON.stringify(cart)); renderCart(); }
+    
+    function renderCart() {
+        if (!cartItems) return;
+        cartItems.replaceChildren(); // Safe clear
+        let count = 0, sub = 0;
+        if (cart.length === 0) {
+            const emptyContainer = document.createElement('div');
+            emptyContainer.className = 'h-full flex flex-col justify-center items-center text-center py-12 px-4';
+            
+            const bagIcon = document.createElement('span');
+            bagIcon.className = 'material-symbols-outlined text-primary/40 text-5xl mb-4';
+            bagIcon.style.fontVariationSettings = "'FILL' 1";
+            bagIcon.textContent = 'shopping_bag';
+            
+            const emptyText = document.createElement('p');
+            emptyText.className = 'text-secondary text-sm mb-6';
+            emptyText.textContent = 'Your luxury bag is currently empty.';
+            
+            const shopBtn = document.createElement('button');
+            shopBtn.id = 'cart-continue-shopping';
+            shopBtn.className = 'border border-primary text-primary py-3 px-6 uppercase hover:bg-primary hover:text-on-primary transition-luxury text-xs font-semibold';
+            shopBtn.textContent = 'Continue Exploring';
+            shopBtn.addEventListener('click', closeCart);
+
+            emptyContainer.appendChild(bagIcon);
+            emptyContainer.appendChild(emptyText);
+            emptyContainer.appendChild(shopBtn);
+            cartItems.appendChild(emptyContainer);
+        } else {
+            cart.forEach(item => {
+                count += item.quantity;
+                sub += item.price * item.quantity;
+                
+                const row = document.createElement('div');
+                row.className = 'flex gap-4 items-center border-b border-white/5 pb-4 last:border-0 last:pb-0';
+                
+                const img = document.createElement('img');
+                img.className = 'w-16 h-16 object-cover border border-primary/10 bg-surface-container-low';
+                img.src = item.image;
+                img.alt = item.title;
+                
+                const details = document.createElement('div');
+                details.className = 'flex-grow min-w-0';
+                
+                const title = document.createElement('h4');
+                title.className = 'text-on-surface text-sm font-semibold uppercase truncate';
+                title.textContent = item.title;
+                
+                const price = document.createElement('span');
+                price.className = 'text-primary text-xs block mt-1';
+                price.textContent = formatCurrency(item.price);
+                
+                const qtyRow = document.createElement('div');
+                qtyRow.className = 'flex items-center gap-2 mt-2';
+                
+                const decBtn = document.createElement('button');
+                decBtn.className = 'qty-btn dec-btn w-6 h-6 border border-white/10 text-xs flex items-center justify-center';
+                decBtn.textContent = '-';
+                decBtn.dataset.id = item.id;
+                decBtn.addEventListener('click', () => {
+                    const idx = cart.findIndex(i => i.id === item.id);
+                    if (idx > -1) { 
+                        if (cart[idx].quantity > 1) cart[idx].quantity--; 
+                        else cart.splice(idx, 1); 
+                        saveCart(); 
+                    }
+                });
+
+                const qtyVal = document.createElement('span');
+                qtyVal.className = 'text-on-surface text-xs w-6 text-center';
+                qtyVal.textContent = item.quantity;
+
+                const incBtn = document.createElement('button');
+                incBtn.className = 'qty-btn inc-btn w-6 h-6 border border-white/10 text-xs flex items-center justify-center';
+                incBtn.textContent = '+';
+                incBtn.dataset.id = item.id;
+                incBtn.addEventListener('click', () => {
+                    const idx = cart.findIndex(i => i.id === item.id);
+                    if (idx > -1) { 
+                        cart[idx].quantity++; 
+                        saveCart(); 
+                    }
+                });
+
+                qtyRow.appendChild(decBtn);
+                qtyRow.appendChild(qtyVal);
+                qtyRow.appendChild(incBtn);
+                
+                details.appendChild(title);
+                details.appendChild(price);
+                details.appendChild(qtyRow);
+
+                const removeBtn = document.createElement('button');
+                removeBtn.className = 'remove-btn material-symbols-outlined text-secondary hover:text-red-400 text-lg';
+                removeBtn.textContent = 'delete';
+                removeBtn.dataset.id = item.id;
+                removeBtn.addEventListener('click', () => {
+                    cart = cart.filter(i => i.id !== item.id); 
+                    saveCart();
+                });
+
+                row.appendChild(img);
+                row.appendChild(details);
+                row.appendChild(removeBtn);
+                cartItems.appendChild(row);
+            });
+        }
+        if (cartSub) cartSub.textContent = formatCurrency(sub);
+        if (cartCnt) { 
+            cartCnt.textContent = count; 
+            cartCnt.classList.toggle('hidden', count === 0); 
+        }
+    }
+
+    function setupAddToBag() {
+        document.querySelectorAll('.add-to-bag-btn').forEach(btn => {
+            btn.addEventListener('click', e => {
+                e.stopPropagation();
+                const d = e.currentTarget.dataset;
+                const price = parseFloat(d.price);
+                const exist = cart.find(i => i.id === d.id);
+                if (exist) exist.quantity++;
+                else cart.push({ id: d.id, title: d.title, price: price, image: d.img, quantity: 1 });
+                saveCart();
+                openCart();
+            });
+        });
+    }
+
+    let checkStep = 1, shipFee = 0;
+    const chkView = document.getElementById('cart-checkout-view'), bagView = document.getElementById('cart-bag-view'), trackView = document.getElementById('cart-tracker-view');
+    const chkBack = document.getElementById('checkout-back-btn'), chkNext = document.getElementById('checkout-next-btn'), chkTotal = document.getElementById('checkout-total');
+    const chkHeader = document.getElementById('cart-header-title');
+    const ccNameInput = document.getElementById('cc-name'), ccNamePreview = document.getElementById('cc-card-holder-preview');
+    const ccNumberInput = document.getElementById('cc-number'), ccNumberPreview = document.getElementById('cc-card-number-preview');
+    const ccExpiryInput = document.getElementById('cc-expiry'), ccExpiryPreview = document.getElementById('cc-card-expiry-preview');
+    const ccBrandLogo = document.getElementById('cc-brand-logo');
+
+    document.getElementById('cart-checkout-btn')?.addEventListener('click', () => {
+        if (cart.length === 0) return;
+        bagView?.classList.add('hidden');
+        chkView?.classList.remove('hidden');
+        showStep(1);
+        sumTotal();
+    });
+
+    function showStep(s) {
+        checkStep = s;
+        document.querySelectorAll('.checkout-pane').forEach(p => p.classList.add('hidden'));
+        document.getElementById(`checkout-pane-${s}`)?.classList.remove('hidden');
+        document.querySelectorAll('.checkout-step-indicator').forEach(ind => {
+            ind.classList.toggle('text-primary', parseInt(ind.dataset.step) === s);
+            ind.classList.toggle('active', parseInt(ind.dataset.step) === s);
+        });
+        if (chkHeader) chkHeader.textContent = `Secure Checkout`;
+        if (chkNext) chkNext.textContent = s === 1 ? 'CONTINUE TO SHIPPING' : s === 2 ? 'CONTINUE TO PAYMENT' : 'PLACE SECURE ORDER';
+    }
+
+    function sumTotal() {
+        let sub = 0; cart.forEach(i => sub += i.price * i.quantity);
+        const ship = document.querySelector('input[name="shipping-method"]:checked');
+        shipFee = ship && ship.value === 'vip-courier' ? 250 : 0;
+        if (chkTotal) chkTotal.textContent = formatCurrency(sub + shipFee);
+    }
+
+    // Detect shipping changes to update total price
+    document.querySelectorAll('input[name="shipping-method"]').forEach(input => {
+        input.addEventListener('change', sumTotal);
+    });
+
+    chkBack?.addEventListener('click', () => {
+        if (checkStep === 1) {
+            chkView?.classList.add('hidden'); bagView?.classList.remove('hidden');
+            if (chkHeader) chkHeader.textContent = 'Your Bag';
+        } else showStep(checkStep - 1);
+    });
+
+    chkNext?.addEventListener('click', () => {
+        if (checkStep === 1) {
+            const fields = ['checkout-email', 'checkout-name', 'checkout-address', 'checkout-city', 'checkout-postcode', 'checkout-phone'];
+            if (fields.some(f => !document.getElementById(f)?.value.trim())) { alert('Please complete all delivery information fields.'); return; }
+            if (!document.getElementById('checkout-email').value.includes('@')) { alert('Please enter a valid email address.'); return; }
+            
+            const nVal = document.getElementById('checkout-name').value.toUpperCase();
+            if (ccNameInput && !ccNameInput.value) { ccNameInput.value = nVal; if (ccNamePreview) ccNamePreview.textContent = nVal; }
+            showStep(2); sumTotal();
+        } else if (checkStep === 2) {
+            showStep(3); sumTotal();
+        } else {
+            const ccNum = ccNumberInput?.value.replace(/\s+/g,'');
+            if (!ccNameInput?.value || !ccNum || !ccExpiryInput?.value) { alert('Please complete payment details.'); return; }
+            if (!luhn(ccNum)) { alert('Security Check Failed: Invalid credit card.'); return; }
+            submitOrder();
+        }
+    });
+
+    const luhn = v => {
+        let s = 0;
+        for (let i = 0; i < v.length; i++) {
+            let n = parseInt(v.charAt(v.length - 1 - i));
+            if (i % 2 === 1) { n *= 2; if (n > 9) n = 1 + (n % 10); }
+            s += n;
+        }
+        return s % 10 === 0;
+    };
+
+    if (ccNumberInput) {
+        ccNumberInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            let formatted = '';
+            for (let i = 0; i < value.length; i++) {
+                if (i > 0 && i % 4 === 0) formatted += ' ';
+                formatted += value[i];
+            }
+            e.target.value = formatted;
+            if (ccNumberPreview) ccNumberPreview.textContent = formatted || '•••• •••• •••• ••••';
+            
+            if (value.startsWith('4')) {
+                if (ccBrandLogo) ccBrandLogo.textContent = 'VISA';
+            } else if (value.startsWith('5')) {
+                if (ccBrandLogo) ccBrandLogo.textContent = 'MC';
+            } else if (value.startsWith('3')) {
+                if (ccBrandLogo) ccBrandLogo.textContent = 'AMEX';
+            } else {
+                if (ccBrandLogo) ccBrandLogo.textContent = 'SECURE';
+            }
+        });
+    }
+
+    if (ccExpiryInput) {
+        ccExpiryInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2, 4);
+            }
+            e.target.value = value;
+            if (ccExpiryPreview) ccExpiryPreview.textContent = value || 'MM/YY';
+        });
+    }
+
+    if (ccNameInput) {
+        ccNameInput.addEventListener('input', (e) => {
+            let value = e.target.value.toUpperCase();
+            e.target.value = value;
+            if (ccNamePreview) ccNamePreview.textContent = value || 'ALEXANDER VANCE';
+        });
+    }
+
+    // --- Active Order Tracking & API Integration ---
+    let trackerPollInterval = null;
+
+    function submitOrder() {
+        let sub = 0; cart.forEach(i => sub += i.price * i.quantity);
+        const nameVal = document.getElementById('checkout-name').value;
+        const emailVal = document.getElementById('checkout-email').value;
+        const addressVal = document.getElementById('checkout-address').value;
+        const cityVal = document.getElementById('checkout-city').value;
+        const postcodeVal = document.getElementById('checkout-postcode').value;
+        const phoneVal = document.getElementById('checkout-phone').value;
+        const shipMethod = document.querySelector('input[name="shipping-method"]:checked').value;
+
+        const orderData = {
+            client_name: nameVal,
+            client_email: emailVal,
+            address: addressVal,
+            city: cityVal,
+            postcode: postcodeVal,
+            phone: phoneVal,
+            items: cart.map(i => ({ id: i.id, title: i.title, price: i.price, quantity: i.quantity })),
+            shipping_method: shipMethod,
+            shipping_fee: shipFee,
+            total: sub + shipFee
+        };
+
+        fetch('/api/orders', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(orderData)
+        })
+        .then(res => {
+            if (!res.ok) throw new Error('Order submission failed');
+            return res.json();
+        })
+        .then(data => {
+            if (data.success) {
+                cart = [];
+                saveCart();
+                drawTracker(data);
+                document.getElementById('active-order-badge')?.classList.remove('hidden');
+                chkView?.classList.add('hidden');
+                trackView?.classList.remove('hidden');
+                runTrackerPoll(data.orderId);
+            }
+        })
+        .catch(err => {
+            console.error('Checkout error:', err);
+            alert('Could not secure order. Please check connection and try again.');
+        });
+    }
+
+    function drawTracker(o) {
+        document.getElementById('tracker-receipt-id') && (document.getElementById('tracker-receipt-id').textContent = o.id || o.orderId);
+        for (let s = 1; s <= 5; s++) {
+            const node = document.getElementById(`track-node-${s}`);
+            if (!node) continue;
+            const dot = node.querySelector('div'), t = node.querySelector('span:first-of-type'), d = node.querySelector('span:last-of-type');
+            if (s < o.status) {
+                dot && (dot.className = "absolute left-[-26px] top-[4px] w-[12px] h-[12px] rounded-full bg-primary border border-primary z-20");
+                t && (t.className = "text-xs font-semibold text-primary uppercase tracking-wider");
+                d && (d.className = "text-[10px] text-secondary");
+            } else if (s === o.status) {
+                dot && (dot.className = "absolute left-[-26px] top-[4px] w-[12px] h-[12px] rounded-full bg-primary border border-white/85 z-20 animate-pulse");
+                t && (t.className = "text-xs font-bold text-on-surface uppercase tracking-wider shimmer-gold");
+                d && (d.className = "text-[10px] text-on-surface");
+            } else {
+                dot && (dot.className = "absolute left-[-26px] top-[4px] w-[12px] h-[12px] rounded-full bg-surface-container-highest border border-white/20 z-20");
+                t && (t.className = "text-xs text-secondary/40 uppercase tracking-wider");
+                d && (d.className = "text-[10px] text-secondary/30");
+            }
+        }
+    }
+
+    function runTrackerPoll(orderId) {
+        if (trackerPollInterval) clearInterval(trackerPollInterval);
+        
+        const fetchStatus = () => {
+            fetch(`/api/orders/${orderId}`)
+            .then(res => {
+                if (!res.ok) throw new Error('Failed to fetch order status');
+                return res.json();
+            })
+            .then(order => {
+                drawTracker(order);
+                localStorage.setItem('ajay_active_order_id', order.id);
+                if (order.status >= 5) {
+                    clearInterval(trackerPollInterval);
+                }
+            })
+            .catch(err => console.error('Tracker polling error:', err));
+        };
+
+        fetchStatus();
+        trackerPollInterval = setInterval(fetchStatus, 6000);
+    }
+
+    // Active order tracking floating badge action
+    document.getElementById('active-order-badge')?.addEventListener('click', () => {
+        const activeId = localStorage.getItem('ajay_active_order_id');
+        if (activeId) {
+            openCart();
+            bagView?.classList.add('hidden');
+            chkView?.classList.add('hidden');
+            trackView?.classList.remove('hidden');
+            runTrackerPoll(activeId);
+        }
+    });
+
+    // Advance simulator button
+    document.getElementById('tracker-simulate-btn')?.addEventListener('click', () => {
+        const orderId = document.getElementById('tracker-receipt-id')?.textContent;
+        if (!orderId) return;
+        fetch(`/api/orders/${orderId}/simulate-progress`, { method: 'POST' })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                fetch(`/api/orders/${orderId}`)
+                .then(res => res.json())
+                .then(order => drawTracker(order));
+            }
+        });
+    });
+
+    document.getElementById('tracker-close-btn')?.addEventListener('click', () => {
+        trackView?.classList.add('hidden');
+        bagView?.classList.remove('hidden');
+        closeCart();
+    });
+
+    // --- Atelier Customizer (Canvas CAD workstation) ---
+    let customType = 'ring';
+    let customMetal = 'yellow';
+    let customCut = 'round';
+    let customGrade = 'vvs';
+    let customEngraving = '';
+
+    const customCanvas = document.getElementById('customizer-canvas');
+    let customCtx = null;
+    if (customCanvas) {
+        customCanvas.width = 300;
+        customCanvas.height = 300;
+        customCtx = customCanvas.getContext('2d');
+    }
+
+    const customizerTypeBtns = document.querySelectorAll('.custom-item-type-btn');
+    const customizerMetalBtns = document.querySelectorAll('.custom-metal-btn');
+    const customizerCutBtns = document.querySelectorAll('.custom-cut-btn');
+    const customizerGradeBtns = document.querySelectorAll('.custom-grade-btn');
+    const customizerEngInput = document.getElementById('customizer-engraving');
+    const customizerCountSpan = document.getElementById('engraving-count');
+    const customizerAddBtn = document.getElementById('customizer-add-to-bag');
+
+    if (customizerEngInput && customizerCountSpan) {
+        customizerEngInput.addEventListener('input', (e) => {
+            const val = e.target.value.toUpperCase();
+            e.target.value = val;
+            customEngraving = val;
+            customizerCountSpan.textContent = `${val.length} / 12 characters`;
+        });
+    }
+
+    function setupCustomizerControls() {
+        customizerTypeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                customizerTypeBtns.forEach(b => b.classList.remove('active', 'border-primary', 'text-primary', 'bg-primary/5'));
+                customizerTypeBtns.forEach(b => b.classList.add('border-white/10', 'text-secondary'));
+                btn.classList.add('active', 'border-primary', 'text-primary', 'bg-primary/5');
+                btn.classList.remove('border-white/10', 'text-secondary');
+                customType = btn.dataset.type;
+                recalculateCustomizer();
+            });
+        });
+
+        customizerMetalBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                customizerMetalBtns.forEach(b => b.classList.remove('active', 'border-primary', 'text-primary', 'bg-primary/5'));
+                customizerMetalBtns.forEach(b => b.classList.add('border-white/10', 'text-secondary'));
+                btn.classList.add('active', 'border-primary', 'text-primary', 'bg-primary/5');
+                btn.classList.remove('border-white/10', 'text-secondary');
+                customMetal = btn.dataset.metal;
+                recalculateCustomizer();
+            });
+        });
+
+        customizerCutBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                customizerCutBtns.forEach(b => b.classList.remove('active', 'border-primary', 'text-primary', 'bg-primary/5'));
+                customizerCutBtns.forEach(b => b.classList.add('border-white/10', 'text-secondary'));
+                btn.classList.add('active', 'border-primary', 'text-primary', 'bg-primary/5');
+                btn.classList.remove('border-white/10', 'text-secondary');
+                customCut = btn.dataset.cut;
+                recalculateCustomizer();
+            });
+        });
+
+        customizerGradeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                customizerGradeBtns.forEach(b => b.classList.remove('active', 'border-primary', 'text-primary', 'bg-primary/5'));
+                customizerGradeBtns.forEach(b => b.classList.add('border-white/10', 'text-secondary'));
+                btn.classList.add('active', 'border-primary', 'text-primary', 'bg-primary/5');
+                btn.classList.remove('border-white/10', 'text-secondary');
+                customGrade = btn.dataset.grade;
+                recalculateCustomizer();
+            });
+        });
+    }
+
+    let customizerPrice = 12000;
+    let customizerConfigId = 'AJ-RING-YE-101';
+
+    function recalculateCustomizer() {
+        let base = 0;
+        if (customType === 'ring') base = 12000;
+        else if (customType === 'chain') base = 25000;
+        else if (customType === 'pendant') base = 8500;
+
+        let metalAdd = 0;
+        if (customMetal === 'yellow') metalAdd = 0;
+        else if (customMetal === 'white') metalAdd = 450;
+        else if (customMetal === 'rose') metalAdd = 350;
+        else if (customMetal === 'platinum') metalAdd = 1800;
+
+        let cutAdd = 0;
+        if (customCut === 'round') cutAdd = 0;
+        else if (customCut === 'princess') cutAdd = 300;
+        else if (customCut === 'emerald') cutAdd = 500;
+        else if (customCut === 'baguette') cutAdd = 800;
+
+        let gradeAdd = 0;
+        if (customGrade === 'vvs') gradeAdd = 0;
+        else if (customGrade === 'vvs1') gradeAdd = 2500;
+        else if (customGrade === 'flawless') gradeAdd = 6500;
+
+        customizerPrice = base + metalAdd + cutAdd + gradeAdd;
+        
+        const typeCode = customType.toUpperCase();
+        const metalCode = customMetal.substring(0, 2).toUpperCase();
+        const randomNum = Math.floor(100 + Math.random() * 900);
+        customizerConfigId = `AJ-${typeCode}-${metalCode}-${randomNum}`;
+
+        const priceEl = document.getElementById('cad-estimated-price');
+        const idEl = document.getElementById('cad-config-id');
+        if (priceEl) priceEl.textContent = formatCurrency(customizerPrice);
+        if (idEl) idEl.textContent = customizerConfigId;
+    }
+
+    const customSparkles = [];
+    
+    function updateCustomSparkles() {
+        const chance = customGrade === 'flawless' ? 0.15 : customGrade === 'vvs1' ? 0.08 : 0.04;
+        
+        if (Math.random() < chance && customCanvas) {
+            let sx = 150, sy = 150;
+            if (customType === 'ring') {
+                const angle = Math.random() * Math.PI * 2;
+                sx = 150 + Math.cos(angle) * 80;
+                sy = 150 + Math.sin(angle) * 80;
+            } else if (customType === 'chain') {
+                const step = Math.random() * 160 - 80;
+                sx = 150 + step;
+                sy = 150 + step;
+            } else if (customType === 'pendant') {
+                const perimeter = Math.random() * 440;
+                if (perimeter < 140) {
+                    sx = 80 + perimeter;
+                    sy = 120;
+                } else if (perimeter < 200) {
+                    sx = 220;
+                    sy = 120 + (perimeter - 140);
+                } else if (perimeter < 340) {
+                    sx = 220 - (perimeter - 200);
+                    sy = 200;
+                } else {
+                    sx = 80;
+                    sy = 200 - (perimeter - 340);
+                }
+            }
+
+            customSparkles.push({
+                x: sx + (Math.random() - 0.5) * 6,
+                y: sy + (Math.random() - 0.5) * 6,
+                size: Math.random() * 8 + 4,
+                opacity: 1.0,
+                decay: Math.random() * 0.04 + 0.02
+            });
+        }
+
+        for (let i = customSparkles.length - 1; i >= 0; i--) {
+            const s = customSparkles[i];
+            s.opacity -= s.decay;
+            if (s.opacity <= 0) {
+                customSparkles.splice(i, 1);
+            }
+        }
+    }
+
+    function drawCustomizer() {
+        if (!customCtx || !customCanvas) return;
+        
+        customCtx.clearRect(0, 0, 300, 300);
+        
+        let colorMain = '#d4af37';
+        let colorHighlight = '#ffe088';
+        let colorDark = '#9a7b1c';
+        
+        if (customMetal === 'white') {
+            colorMain = '#c0c0c0';
+            colorHighlight = '#ffffff';
+            colorDark = '#787878';
+        } else if (customMetal === 'rose') {
+            colorMain = '#b76e79';
+            colorHighlight = '#fcd5d9';
+            colorDark = '#8a4f57';
+        } else if (customMetal === 'platinum') {
+            colorMain = '#e5e4e2';
+            colorHighlight = '#ffffff';
+            colorDark = '#9a9a97';
+        }
+
+        const metalGrad = customCtx.createLinearGradient(0, 0, 300, 300);
+        metalGrad.addColorStop(0, colorDark);
+        metalGrad.addColorStop(0.3, colorHighlight);
+        metalGrad.addColorStop(0.5, colorMain);
+        metalGrad.addColorStop(0.7, colorDark);
+        metalGrad.addColorStop(1, colorHighlight);
+
+        if (customType === 'ring') {
+            customCtx.beginPath();
+            customCtx.arc(150, 150, 80, 0, Math.PI * 2);
+            customCtx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
+            customCtx.lineWidth = 18;
+            customCtx.stroke();
+
+            customCtx.beginPath();
+            customCtx.arc(150, 150, 80, 0, Math.PI * 2);
+            customCtx.strokeStyle = metalGrad;
+            customCtx.lineWidth = 14;
+            customCtx.stroke();
+
+            customCtx.beginPath();
+            customCtx.arc(150, 150, 72, 0, Math.PI * 2);
+            customCtx.strokeStyle = colorDark;
+            customCtx.lineWidth = 1;
+            customCtx.stroke();
+
+            const totalDiamonds = 12;
+            for (let i = 0; i < totalDiamonds; i++) {
+                const angle = (i * Math.PI * 2) / totalDiamonds;
+                const dx = 150 + Math.cos(angle) * 80;
+                const dy = 150 + Math.sin(angle) * 80;
+                
+                customCtx.beginPath();
+                customCtx.arc(dx, dy, 5, 0, Math.PI * 2);
+                customCtx.fillStyle = 'rgba(230, 240, 255, 0.85)';
+                customCtx.fill();
+                
+                customCtx.beginPath();
+                customCtx.arc(dx, dy, 2.5, 0, Math.PI * 2);
+                customCtx.fillStyle = '#ffffff';
+                customCtx.fill();
+                
+                customCtx.beginPath();
+                customCtx.arc(dx - 3, dy - 3, 1, 0, Math.PI * 2);
+                customCtx.arc(dx + 3, dy + 3, 1, 0, Math.PI * 2);
+                customCtx.fillStyle = colorHighlight;
+                customCtx.fill();
+            }
+
+            if (customEngraving) {
+                customCtx.font = 'italic bold 14px "Bodoni Moda"';
+                customCtx.fillStyle = colorHighlight;
+                customCtx.textAlign = 'center';
+                customCtx.textBaseline = 'middle';
+                customCtx.fillText(customEngraving, 150, 150);
+            } else {
+                customCtx.font = '10px "Hanken Grotesk"';
+                customCtx.fillStyle = 'rgba(212, 175, 55, 0.4)';
+                customCtx.textAlign = 'center';
+                customCtx.textBaseline = 'middle';
+                customCtx.fillText('ATELIER', 150, 150);
+            }
+
+        } else if (customType === 'chain') {
+            const linksCount = 4;
+            customCtx.lineWidth = 10;
+            customCtx.lineCap = 'round';
+
+            for (let i = 0; i < linksCount; i++) {
+                const offset = (i - 1.5) * 45;
+                const cx = 150 + offset;
+                const cy = 150 + offset;
+
+                customCtx.beginPath();
+                customCtx.ellipse(cx, cy, 25, 12, Math.PI / 4, 0, Math.PI * 2);
+                customCtx.strokeStyle = 'rgba(0,0,0,0.5)';
+                customCtx.stroke();
+
+                customCtx.beginPath();
+                customCtx.ellipse(cx, cy, 24, 11, Math.PI / 4, 0, Math.PI * 2);
+                customCtx.strokeStyle = metalGrad;
+                customCtx.stroke();
+
+                for (let j = -2; j <= 2; j++) {
+                    const angle = (j * Math.PI) / 6;
+                    const a = 24, b = 11;
+                    const ex = cx + a * Math.cos(angle) * Math.cos(Math.PI / 4) - b * Math.sin(angle) * Math.sin(Math.PI / 4);
+                    const ey = cy + a * Math.cos(angle) * Math.sin(Math.PI / 4) + b * Math.sin(angle) * Math.cos(Math.PI / 4);
+                    
+                    customCtx.beginPath();
+                    customCtx.arc(ex, ey, 2.5, 0, Math.PI * 2);
+                    customCtx.fillStyle = '#ffffff';
+                    customCtx.fill();
+                }
+            }
+
+            customCtx.fillStyle = metalGrad;
+            customCtx.fillRect(110, 195, 80, 20);
+            customCtx.strokeStyle = colorHighlight;
+            customCtx.lineWidth = 1;
+            customCtx.strokeRect(110, 195, 80, 20);
+
+            if (customEngraving) {
+                customCtx.font = 'bold 9px font-mono';
+                customCtx.fillStyle = 'rgba(0,0,0,0.7)';
+                customCtx.textAlign = 'center';
+                customCtx.textBaseline = 'middle';
+                customCtx.fillText(customEngraving, 150, 205);
+            }
+
+        } else if (customType === 'pendant') {
+            customCtx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+            customCtx.beginPath();
+            customCtx.roundRect(83, 123, 140, 80, 8);
+            customCtx.fill();
+
+            customCtx.beginPath();
+            customCtx.ellipse(150, 105, 12, 18, 0, 0, Math.PI * 2);
+            customCtx.strokeStyle = metalGrad;
+            customCtx.lineWidth = 8;
+            customCtx.stroke();
+
+            customCtx.beginPath();
+            customCtx.roundRect(80, 120, 140, 80, 8);
+            customCtx.fillStyle = metalGrad;
+            customCtx.fill();
+            customCtx.lineWidth = 1.5;
+            customCtx.strokeStyle = colorHighlight;
+            customCtx.stroke();
+
+            for (let x = 85; x <= 215; x += 13) {
+                drawMicroDiamond(x, 125);
+                drawMicroDiamond(x, 195);
+            }
+            for (let y = 138; y <= 182; y += 11) {
+                drawMicroDiamond(85, y);
+                drawMicroDiamond(215, y);
+            }
+
+            if (customEngraving) {
+                customCtx.font = 'bold 20px "Bodoni Moda"';
+                customCtx.fillStyle = 'rgba(0,0,0,0.5)';
+                customCtx.textAlign = 'center';
+                customCtx.textBaseline = 'middle';
+                customCtx.fillText(customEngraving, 152, 162);
+                
+                customCtx.fillStyle = colorHighlight;
+                customCtx.fillText(customEngraving, 150, 160);
+            } else {
+                customCtx.font = 'italic 11px "Hanken Grotesk"';
+                customCtx.fillStyle = 'rgba(255,255,255,0.25)';
+                customCtx.textAlign = 'center';
+                customCtx.textBaseline = 'middle';
+                customCtx.fillText('AJAY SPEC', 150, 160);
+            }
+        }
+
+        updateCustomSparkles();
+        customSparkles.forEach(s => {
+            customCtx.save();
+            customCtx.translate(s.x, s.y);
+            customCtx.beginPath();
+            const ctx = customCtx;
+            ctx.moveTo(0, -s.size);
+            ctx.lineTo(s.size * 0.25, -s.size * 0.25);
+            ctx.lineTo(s.size, 0);
+            ctx.lineTo(s.size * 0.25, s.size * 0.25);
+            ctx.lineTo(0, s.size);
+            ctx.lineTo(-s.size * 0.25, s.size * 0.25);
+            ctx.lineTo(-s.size, 0);
+            ctx.lineTo(-s.size * 0.25, -s.size * 0.25);
+            ctx.closePath();
+            ctx.fillStyle = `rgba(255, 255, 255, ${s.opacity * 0.95})`;
+            ctx.fill();
+            customCtx.restore();
+        });
+    }
+
+    if (customizerAddBtn) {
+        customizerAddBtn.addEventListener('click', () => {
+            const metalLabel = customMetal === 'yellow' ? '18k Yellow Gold' : customMetal === 'white' ? '18k White Gold' : customMetal === 'rose' ? '18k Rose Gold' : 'Platinum';
+            const cutLabel = customCut === 'round' ? 'Round Brilliant' : customCut === 'princess' ? 'Princess Cut' : customCut === 'emerald' ? 'Emerald Cut' : 'Baguette Cut';
+            const gradeLabel = customGrade === 'vvs' ? 'VVS+ Standard' : customGrade === 'vvs1' ? 'VVS1 Flawless' : 'FL Investment';
+            
+            let canvasSnap = '';
+            if (customCanvas) {
+                canvasSnap = customCanvas.toDataURL('image/png');
+            }
+
+            const customItem = {
+                id: customizerConfigId,
+                title: `Custom ${customType.toUpperCase()} (${metalLabel} - ${cutLabel} - ${gradeLabel}${customEngraving ? ' - Engraving: ' + customEngraving : ''})`,
+                price: customizerPrice,
+                image: canvasSnap || 'https://lh3.googleusercontent.com/aida-public/AB6AXuBvThM2bKI9gkEUjcaROhP9T4utXgs0eOYkPkBe_6HhQHGUxClgWrgkBKDp4NWPMtE3twIYFM86NQ8prn8ZoeaN1l5sSQDz9Nj9PHNxwiteQbNNxGKk0hUgfVYktcCMVYINROg1A9XIOoAoPdmE7rWwaxvc2NgztW5hpN28P3LUjOLtRDiJtLKuv6qWBlknBl-PqXEUygKptIwn3SS6uwAmJuHq-ae8-YH1wZkEL-tx07w7t93xbKhljNofI0SuaMV68NS0TB41TvLq',
+                quantity: 1
+            };
+
+            cart.push(customItem);
+            saveCart();
+            openCart();
+        });
+    }
+
+    function customizerAnimationTick() {
+        drawCustomizer();
+        requestAnimationFrame(customizerAnimationTick);
+    }
+
+    // --- VIP Consultation Scheduler Logic ---
+    let selectedBookingType = '';
+    let selectedBookingDate = '';
+    let selectedBookingTime = '';
+    let calendarDate = new Date();
+
+    function generateCalendar() {
+        const daysGrid = document.getElementById('calendar-days-grid');
+        const monthYearTitle = document.getElementById('calendar-month-year');
+        if (!daysGrid || !monthYearTitle) return;
+
+        daysGrid.replaceChildren();
+
+        const year = calendarDate.getFullYear();
+        const month = calendarDate.getMonth();
+
+        monthYearTitle.textContent = `${monthNames[month]} ${year}`;
+
+        const firstDayIdx = new Date(year, month, 1).getDay();
+        const startDayOffset = firstDayIdx === 0 ? 6 : firstDayIdx - 1;
+        const totalDays = new Date(year, month + 1, 0).getDate();
+
+        for (let i = 0; i < startDayOffset; i++) {
+            const empty = document.createElement('div');
+            daysGrid.appendChild(empty);
+        }
+
+        const today = new Date();
+
+        for (let day = 1; day <= totalDays; day++) {
+            const dayBtn = document.createElement('button');
+            dayBtn.className = 'py-2 rounded font-semibold transition-all duration-300 text-xs ';
+            dayBtn.textContent = day;
+
+            const targetDate = new Date(year, month, day);
+            const isPast = targetDate.setHours(23,59,59,999) < today.getTime();
+            const isWeekend = targetDate.getDay() === 0; // Disable Sundays
+
+            if (isPast || isWeekend) {
+                dayBtn.className += 'text-white/10 cursor-not-allowed';
+                dayBtn.disabled = true;
+            } else {
+                dayBtn.className += 'text-on-surface hover:bg-primary/20 hover:text-primary';
+                
+                const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                
+                if (selectedBookingDate === dateStr) {
+                    dayBtn.className += ' bg-primary text-surface-container-lowest font-bold';
+                } else {
+                    dayBtn.className += ' bg-surface-container-low';
+                }
+
+                dayBtn.addEventListener('click', () => {
+                    selectedBookingDate = dateStr;
+                    selectedBookingTime = '';
+                    document.getElementById('scheduler-to-step-3')?.classList.add('hidden');
+                    generateCalendar();
+                    generateTimeSlots();
+                });
+            }
+            daysGrid.appendChild(dayBtn);
+        }
+    }
+
+    const availableTimeSlots = ['10:00 AM', '11:00 AM', '12:00 PM', '01:00 PM', '02:00 PM', '03:00 PM', '04:00 PM'];
+
+    function generateTimeSlots() {
+        const container = document.getElementById('scheduler-slots-container');
+        if (!container) return;
+        container.replaceChildren();
+
+        if (!selectedBookingDate) {
+            const tip = document.createElement('div');
+            tip.className = 'text-center py-6 text-[10px] text-secondary uppercase tracking-wider col-span-2';
+            tip.textContent = 'Please select a date first';
+            container.appendChild(tip);
+            return;
+        }
+
+        availableTimeSlots.forEach(slot => {
+            const btn = document.createElement('button');
+            btn.className = 'w-full py-3 border rounded text-[10px] uppercase font-bold tracking-wider transition-all duration-300 ';
+            btn.textContent = slot;
+
+            if (selectedBookingTime === slot) {
+                btn.className += 'border-primary text-primary bg-primary/10';
+            } else {
+                btn.className += 'border-white/10 text-secondary hover:border-primary/50 hover:text-primary bg-surface/40';
+            }
+
+            btn.addEventListener('click', () => {
+                selectedBookingTime = slot;
+                generateTimeSlots();
+                document.getElementById('scheduler-to-step-3')?.classList.remove('hidden');
+            });
+
+            container.appendChild(btn);
+        });
+    }
+
+    document.querySelectorAll('.scheduler-type-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            selectedBookingType = btn.dataset.type;
+            document.getElementById('scheduler-step-1')?.classList.add('hidden');
+            document.getElementById('scheduler-step-2')?.classList.remove('hidden');
+            generateCalendar();
+            generateTimeSlots();
+        });
+    });
+
+    document.querySelectorAll('#scheduler-step-2 .scheduler-back-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.getElementById('scheduler-step-2')?.classList.add('hidden');
+            document.getElementById('scheduler-step-1')?.classList.remove('hidden');
+        });
+    });
+    
+    document.querySelectorAll('#scheduler-step-3 .scheduler-back-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.getElementById('scheduler-step-3')?.classList.add('hidden');
+            document.getElementById('scheduler-step-2')?.classList.remove('hidden');
+        });
+    });
+
+    document.getElementById('calendar-prev-month')?.addEventListener('click', () => {
+        calendarDate.setMonth(calendarDate.getMonth() - 1);
+        generateCalendar();
+    });
+    document.getElementById('calendar-next-month')?.addEventListener('click', () => {
+        calendarDate.setMonth(calendarDate.getMonth() + 1);
+        generateCalendar();
+    });
+
+    document.getElementById('scheduler-to-step-3')?.addEventListener('click', () => {
+        if (!selectedBookingDate || !selectedBookingTime) return;
+        document.getElementById('scheduler-step-2')?.classList.add('hidden');
+        document.getElementById('scheduler-step-3')?.classList.remove('hidden');
+
+        const sumType = document.getElementById('summary-booking-type');
+        const sumDate = document.getElementById('summary-booking-date');
+        const sumTime = document.getElementById('summary-booking-time');
+        
+        if (sumType) sumType.textContent = selectedBookingType;
+        if (sumDate) sumDate.textContent = selectedBookingDate;
+        if (sumTime) sumTime.textContent = selectedBookingTime;
+    });
+
+    document.getElementById('scheduler-submit-btn')?.addEventListener('click', () => {
+        const nameInput = document.getElementById('scheduler-name');
+        const emailInput = document.getElementById('scheduler-email');
+        const messageInput = document.getElementById('scheduler-message');
+
+        if (!nameInput?.value.trim() || !emailInput?.value.trim()) {
+            alert('Please complete your name and email address.');
+            return;
+        }
+        if (!emailInput.value.includes('@')) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        const bookingData = {
+            type: selectedBookingType,
+            date: selectedBookingDate,
+            time: selectedBookingTime,
+            client_name: nameInput.value.trim(),
+            client_email: emailInput.value.trim(),
+            message: messageInput ? messageInput.value.trim() : ''
+        };
+
+        fetch('/api/bookings', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(bookingData)
+        })
+        .then(res => {
+            if (res.status === 409) {
+                throw new Error('This slot is already booked. Please choose another slot.');
+            }
+            if (!res.ok) throw new Error('Failed to secure booking reservation');
+            return res.json();
+        })
+        .then(data => {
+            if (data.success) {
+                document.getElementById('scheduler-step-3')?.classList.add('hidden');
+                const step4 = document.getElementById('scheduler-step-4');
+                if (step4) step4.classList.remove('hidden');
+
+                const succType = document.getElementById('success-booking-type');
+                const succDateTime = document.getElementById('success-booking-datetime');
+                
+                if (succType) succType.textContent = data.type;
+                if (succDateTime) succDateTime.textContent = `${data.date} at ${data.time}`;
+
+                const dwnBtn = document.getElementById('scheduler-download-ics');
+                if (dwnBtn) {
+                    dwnBtn.onclick = () => {
+                        window.location.href = `/api/bookings/export-ics?id=${data.bookingId}`;
+                    };
+                }
+            }
+        })
+        .catch(err => {
+            alert(err.message);
+        });
+    });
+
+    document.getElementById('scheduler-reset-btn')?.addEventListener('click', () => {
+        document.getElementById('scheduler-step-4')?.classList.add('hidden');
+        document.getElementById('scheduler-step-1')?.classList.remove('hidden');
+        selectedBookingDate = '';
+        selectedBookingTime = '';
+        selectedBookingType = '';
+        document.getElementById('scheduler-name').value = '';
+        document.getElementById('scheduler-email').value = '';
+        document.getElementById('scheduler-message').value = '';
+    });
+
+    // --- Page Initialization ---
+    window.addEventListener('load', () => {
+        renderCart();
+        setupAddToBag();
+        setupExploreButtons();
+        setupCustomizerControls();
+        recalculateCustomizer();
+        customizerAnimationTick();
+        
+        // Restore active order tracker if exists on refresh
+        const storedOrderId = localStorage.getItem('ajay_active_order_id');
+        if (storedOrderId) {
+            document.getElementById('active-order-badge')?.classList.remove('hidden');
+        }
+    });
+
+    // --- Falling Diamonds Particle Effect ---
+    const diamondsCanvas = document.getElementById('diamonds-canvas');
+    if (diamondsCanvas) {
+        const ctx = diamondsCanvas.getContext('2d');
+        let animationFrameId;
+
+        function resizeDiamondsCanvas() {
+            diamondsCanvas.width = window.innerWidth;
+            diamondsCanvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeDiamondsCanvas);
+        resizeDiamondsCanvas();
+
+        const particles = [];
+        const maxParticles = 60;
+
+        class Diamond {
+            constructor() {
+                this.reset(true);
+            }
+
+            reset(initial = false) {
+                this.size = Math.random() * 8 + 4;
+                this.x = Math.random() * diamondsCanvas.width;
+                this.y = initial ? Math.random() * diamondsCanvas.height : -20;
+                this.speedY = Math.random() * 1.5 + 0.8;
+                this.speedX = (Math.random() - 0.5) * 0.4;
+                this.rotation = Math.random() * Math.PI * 2;
+                this.rotationSpeed = (Math.random() - 0.5) * 0.02;
+                this.opacity = Math.random() * 0.6 + 0.2;
+                this.shimmerSpeed = Math.random() * 0.03 + 0.01;
+                this.shimmerDirection = 1;
+                this.colorType = Math.random() > 0.4 ? 'white' : 'gold';
+            }
+
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX + Math.sin(this.y * 0.01) * 0.15;
+                this.rotation += this.rotationSpeed;
+
+                this.opacity += this.shimmerSpeed * this.shimmerDirection;
+                if (this.opacity >= 0.8) {
+                    this.opacity = 0.8;
+                    this.shimmerDirection = -1;
+                } else if (this.opacity <= 0.1) {
+                    this.opacity = 0.1;
+                    this.shimmerDirection = 1;
+                }
+
+                if (this.y > diamondsCanvas.height + 20 || this.x < -20 || this.x > diamondsCanvas.width + 20) {
+                    this.reset(false);
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation);
+                
+                ctx.beginPath();
+                ctx.moveTo(0, -this.size);
+                ctx.lineTo(this.size * 0.65, 0);
+                ctx.lineTo(0, this.size);
+                ctx.lineTo(-this.size * 0.65, 0);
+                ctx.closePath();
+                
+                let mainColor, innerColor;
+                if (this.colorType === 'gold') {
+                    mainColor = `rgba(212, 175, 55, ${this.opacity * 0.85})`;
+                    innerColor = `rgba(255, 240, 180, ${this.opacity * 1.25})`;
+                } else {
+                    mainColor = `rgba(210, 210, 220, ${this.opacity * 0.8})`;
+                    innerColor = `rgba(255, 255, 255, ${this.opacity * 1.3})`;
+                }
+                
+                ctx.fillStyle = mainColor;
+                ctx.fill();
+                
+                ctx.beginPath();
+                ctx.moveTo(0, -this.size * 0.45);
+                ctx.lineTo(this.size * 0.28, 0);
+                ctx.lineTo(0, this.size * 0.45);
+                ctx.lineTo(-this.size * 0.28, 0);
+                ctx.closePath();
+                ctx.fillStyle = innerColor;
+                ctx.fill();
+                
+                ctx.restore();
+            }
+        }
+
+        for (let i = 0; i < maxParticles; i++) {
+            particles.push(new Diamond());
+        }
+
+        function animateDiamonds() {
+            ctx.clearRect(0, 0, diamondsCanvas.width, diamondsCanvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            animationFrameId = requestAnimationFrame(animateDiamonds);
+        }
+
+        console.log("Initializing falling diamonds canvas animation. Dimensions:", diamondsCanvas.width, "x", diamondsCanvas.height);
+        animateDiamonds();
+    }
+</script>
+<script src="widget.js"></script>
+</body></html>
