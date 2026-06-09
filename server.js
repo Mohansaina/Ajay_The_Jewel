@@ -33,8 +33,9 @@ app.use((req, res, next) => {
     next();
 });
 
-// Initialize SQLite database
-const dbPath = path.join(__dirname, 'ajay_jeweller.db');
+// Initialize SQLite database (use /tmp on Vercel for writable ephemeral storage)
+const isVercel = process.env.VERCEL === '1' || process.env.NOW_BUILDER === '1';
+const dbPath = isVercel ? path.join('/tmp', 'ajay_jeweller.db') : path.join(__dirname, 'ajay_jeweller.db');
 const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
         console.error('Error opening database:', err);
@@ -82,9 +83,9 @@ function initializeTables() {
 // Serve static frontend files
 app.use(express.static(__dirname));
 
-// Serve code.html at the root route
+// Serve index.html at the root route
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'code.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // --- API Endpoints ---
@@ -448,7 +449,11 @@ function streamText(text, res, req) {
     });
 }
 
-// Start server
-const server = app.listen(PORT, HOST, () => {
-    console.log(`Server is running at http://${HOST}:${PORT}`);
-});
+// Start server (only if not running on Vercel)
+if (process.env.VERCEL !== '1' && process.env.NOW_BUILDER !== '1') {
+    app.listen(PORT, HOST, () => {
+        console.log(`Server is running at http://${HOST}:${PORT}`);
+    });
+}
+
+module.exports = app;
