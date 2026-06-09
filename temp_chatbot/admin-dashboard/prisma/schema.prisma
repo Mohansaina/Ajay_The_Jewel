@@ -1,0 +1,107 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id            String             @id @default(uuid())
+  email         String             @unique
+  passwordHash  String             @map("password_hash")
+  companyName   String?            @map("company_name")
+  createdAt     DateTime           @default(now()) @map("created_at")
+  
+  settings      WidgetSettings?
+  apiKeys       APIKey[]
+  documents     KnowledgeBaseDoc[]
+  conversations Conversation[]
+
+  @@map("users")
+}
+
+model WidgetSettings {
+  id                       String  @id @default(uuid())
+  userId                   String  @unique @map("user_id")
+  user                     User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  brandColor               String  @default("#2563EB") @map("brand_color")
+  avatarUrl                String? @map("avatar_url")
+  welcomeMessage           String  @default("Hello! How can I help you today?") @map("welcome_message")
+  position                 String  @default("bottom-right")
+  escalationEmail          String  @map("escalation_email")
+  escalationSubjectPrefix  String  @default("[AI Chatbot Escalation]") @map("escalation_subject_prefix")
+  replyToEmail             String? @map("reply_to_email")
+  emailCaptureRequired     Boolean @default(false) @map("email_capture_required")
+  confidenceThreshold      Float   @default(0.7) @map("confidence_threshold")
+
+  @@map("widget_settings")
+}
+
+model APIKey {
+  id        String   @id @default(uuid())
+  keyHash   String   @unique @map("key_hash")
+  userId    String   @map("user_id")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name      String   @default("Default API Key")
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([userId])
+  @@map("api_keys")
+}
+
+model KnowledgeBaseDoc {
+  id          String   @id @default(uuid())
+  userId      String   @map("user_id")
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  filename    String
+  contentType String   @map("content_type") // pdf, docx, txt, url
+  content     String   // Raw text content extracted
+  url         String?  // If crawled from a website URL
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@index([userId])
+  @@map("knowledge_base_docs")
+}
+
+model Conversation {
+  id           String            @id @default(uuid())
+  userId       String            @map("user_id")
+  user         User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  visitorEmail String?           @map("visitor_email")
+  status       String            @default("active") // active, escalated, resolved
+  createdAt    DateTime          @default(now()) @map("created_at")
+  
+  messages     Message[]
+  escalations  EscalationEvent[]
+
+  @@index([userId])
+  @@map("conversations")
+}
+
+model Message {
+  id             String       @id @default(uuid())
+  conversationId String       @map("conversation_id")
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender         String       // visitor, assistant, owner
+  content        String
+  createdAt      DateTime     @default(now()) @map("created_at")
+
+  @@index([conversationId])
+  @@map("messages")
+}
+
+model EscalationEvent {
+  id             String       @id @default(uuid())
+  conversationId String       @map("conversation_id")
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  emailMessageId String       @unique @map("email_message_id") // Message-ID sent in SMTP, used to match replies
+  status         String       @default("pending") // pending, replied
+  createdAt      DateTime     @default(now()) @map("created_at")
+  resolvedAt     DateTime?    @map("resolved_at")
+
+  @@index([conversationId])
+  @@map("escalation_events")
+}
