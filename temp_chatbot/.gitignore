@@ -1,0 +1,43 @@
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Dependencies
+node_modules/
+jspm_packages/
+web_modules/
+
+# Python cache and virtualenvs
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+
+# Next.js build outputs
+.next/
+out/
+build/
+dist/
+
+# SQLite databases
+*.db
+*.db-journal
+
+# Qdrant local storage
+qdrant_storage/
+
+# IDE files
+.vscode/
+.idea/
+.gemini/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
